@@ -4,7 +4,31 @@
     flex-direction: column;
     background: linear-gradient(135deg, #FF9900, #cc33ff);
   }
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
   
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+  
+  .typing-container {
+    font-size: 2rem;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%; 
+    margin: 0 auto;
+    animation: typing 4s;
+  }  
+
   .profile-content {
     padding: 60px 0;
   }
