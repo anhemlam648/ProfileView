@@ -1,0 +1,51 @@
+/* SpotifyPlayer.css */
+.spotify-player {
+    padding: 20px;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .song-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 8px;
+  }
+  
+  .song-item img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 20px;
+  }
+  
+  .song-info {
+    flex: 1;
+  }
+  
+  .song-title {
+    font-weight: bold;
+    color: #888;
+  }
+  
+  .song-artist {
+    font-style: italic;
+    color: #888;
+  }
+  
+  .play-icon {
+    font-size: 2rem;
+    color: #1db954;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .play-icon:hover {
+    transform: scale(1.2);
+  }
+  

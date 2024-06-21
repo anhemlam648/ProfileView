@@ -1,0 +1,124 @@
+.profile {
+    margin-top: 90px;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #FF9900, #cc33ff);
+  }
+  
+  .profile-content {
+    padding: 60px 0;
+  }
+  
+  .profile h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+  
+  .profile p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    
+  }
+  
+  .skill-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  
+  .skill-icon {
+    text-align: center;
+    margin: 0 20px;
+    transition: transform 0.3s ease-out;
+    animation: bounce 2s infinite alternate; 
+  }
+  
+  .skill-icon img {
+    width: 100px;
+    height: 100px;
+    border: 2px solid #333;
+    border-radius: 50%;
+    padding: 10px;
+  }
+  
+  .skill-icon p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  .profile-intro {
+    text-align: center;
+  }
+  
+  @keyframes bounce {
+    0% {
+      transform: translateY(0); 
+    }
+    100% {
+      transform: translateY(-10px); 
+    }
+  }
+  .square-box {
+    height: 200px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;  
+    margin: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    border-radius: 20px;
+  }
+  
+  .square-box:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
+  }
+  
+  .square-box p {
+    text-align: center;
+    margin: 0;
+    color: 	#000000;
+  }
+  .education {
+    background: linear-gradient(135deg, #FF9900, #cc33ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 20px;
+  }
+  .figma {
+    background: linear-gradient(135deg, #00FFFF, #cc33ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 20px;
+  }
+  .network {
+    background: linear-gradient(135deg, #CCCCFF, #cc33ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 20px;
+  }
+  .music {
+    background: linear-gradient(135deg, #33FF33, #cc33ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 20px;
+  }
+  .button {
+    width: 200px;
+    margin-left: 540px;
+    font-size: 20px; /* Giảm kích thước font chữ */
+    padding: 8px 16px; /* Điều chỉnh padding cho phần nút */
+    background-color: #007BFF; /* Màu nền của nút */
+    color: white; /* Màu chữ của nút */
+    border: none; /* Loại bỏ viền của nút */
+    border-radius: 20px; /* Bo góc của nút để nó trông tròn hơn */
+    cursor: pointer; /* Biến con trỏ thành dấu nhấp chuột khi di chuột vào nút */
+    transition: background-color 0.3s ease; /* Hiệu ứng chuyển đổi màu nền */
+  }
+  
+  .button:hover {
+    background-color: #0056b3; /* Màu nền khi di chuột vào */
+  }
+  
