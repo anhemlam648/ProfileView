@@ -10,7 +10,7 @@ const NavBar = () => {
   return (
     <Navbar expanded={expanded} expand="lg" bg="dark" variant="dark" className="custom-navbar">
       <Container>
-        <Navbar.Brand href="/" className="logo-technology" style={{width:'50px'}}>
+        <Navbar.Brand href="#" className="logo-technology" style={{width:'50px'}}>
           <img src={Logotechnology} alt="Logo" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={() => setExpanded(expanded ? false : "expanded")} />
