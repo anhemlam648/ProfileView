@@ -23,7 +23,7 @@ const Footer = () => {
         </Row>
         <Row>
           <Col>
-            <p className="text-center" style={{fontSize: '15px'}}>© 2024 Vu Trung Nghia.</p>
+            <p className="text-center" style={{fontSize: '15px'}}>© 2024 By Vu Trung Nghia.</p>
           </Col>
         </Row>
       </Container>

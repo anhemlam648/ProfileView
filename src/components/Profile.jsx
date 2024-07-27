@@ -38,7 +38,7 @@
       }, []);
 
     return (
-      <div className="profile">
+      <div id="HomeProfile" className="profile">
         <NavBar />
         <Container className="profile-content">
           <Row>
@@ -90,7 +90,7 @@
               </Row>
           </Container>
           </div>
-          <div style={{ textAlign: 'center', fontSize: '70px', color:'#FFCCFF' }}>|</div>
+          <div style={{ textAlign: 'center', fontSize: '50px', color: '#FFCCFF' }}>&#9660;</div>
           <div className="about-me">
           <Container>
               <Row>
@@ -135,7 +135,7 @@
           </Row>
           <hr />
           </Container>
-          <div className="content-contact">
+          <div id="contactProfile" className="content-contact" >
           <Container>
               <Row>
               <Col className="content">
