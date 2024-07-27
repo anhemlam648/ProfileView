@@ -1,7 +1,7 @@
 import { Container, Row, Col } from 'react-bootstrap'; // Assuming you have react-bootstrap imported
 import NavBar from './NavBar';
 import Footer from './Footer';
-import profileImage from "../assets/img/images_vunghia.jpg"; 
+import Image from "../assets/img/images_vunghia.jpg"; 
 import './Contact.css'
 const Contact = () => {
   return (
@@ -11,7 +11,7 @@ const Contact = () => {
         <Row className="justify-content-center">
           <Col md={6}>
             <img
-              src={profileImage}
+              src={Image}
               style={{marginLeft:'210px', marginBottom: '10px', width: '220px', height: '300px', borderRadius: '20%' }}
               alt="Profile Image"
             />
