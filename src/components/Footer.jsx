@@ -8,8 +8,8 @@ const Footer = () => {
         <Row>
           <Col md={6}>
             <h5 style={{fontSize: '15px'}}>Contact Information</h5>
-            <p style={{fontSize: '15px'}}>34/7, Str. So 1A, Long Thanh My Ward, Dist Thu Duc, Ho Chi Minh City</p>
-            <p style={{fontSize: '15px'}}>Email: vunghia467@gmail.com</p>
+            <p style={{fontSize: '15px'}}>📍 34/7, Str. So 1A, Long Thanh My Ward, Dist Thu Duc, Ho Chi Minh City</p>
+            <p style={{fontSize: '15px'}}>📧 Email: vunghia467@gmail.com</p>
           </Col>
           <Col md={6}>
             <h6>Useful Links</h6>
@@ -23,7 +23,7 @@ const Footer = () => {
         </Row>
         <Row>
           <Col>
-            <p className="text-center" style={{fontSize: '15px'}}>© 2024 Your Company. All rights reserved.</p>
+            <p className="text-center" style={{fontSize: '15px'}}>© 2024 Vu Trung Nghia.</p>
           </Col>
         </Row>
       </Container>
