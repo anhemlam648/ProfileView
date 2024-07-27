@@ -12,7 +12,7 @@ const Contact = () => {
           <Col md={6}>
             <img
               src={Image}
-              style={{marginLeft:'210px', marginBottom: '10px', width: '550px', height: '300px', borderRadius: '20%' }}
+              style={{marginLeft:'150px', marginBottom: '10px', width: '550px', height: '300px', borderRadius: '10%' }}
               alt="Profile Image"
             />
             <h1 className="contact-header" style={{textAlign:'center',color:'#000000'}}>Contact Me</h1>
