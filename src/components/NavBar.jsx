@@ -22,7 +22,7 @@ const NavBar = () => {
             {!isContactPage && <Nav.Link href="#contactProfile">Contact</Nav.Link>}
           </Nav>
           <Nav>
-            <Nav.Link href="#deets">
+            <Nav.Link href="#">
               <img src={navIcon1} alt="Nav Icon" />
             </Nav.Link>
           </Nav>
