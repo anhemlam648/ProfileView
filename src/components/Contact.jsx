@@ -12,8 +12,9 @@ const contactPageStyle = {
 
 const contactHeaderStyle = {
   textAlign: 'center',
-  marginTop: '20px',
+  marginTop: '10px',
   color: '#333',
+  marginBottom: '-10px',
 };
 
 const contactInfoStyle = {
@@ -27,12 +28,22 @@ const contactInfoParagraphStyle = {
   color: '#000000',
 };
 
+const contactInfoParagraphStyle1 = {
+  marginBottom: '10px',
+  textAlign: 'center',
+  color: '#000000',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+};
+
 const contactInfoLinkStyle = {
   color: '#007bff',
+  marginLeft: '5px', 
 };
 
 const imageStyle = {
-  marginTop: '50px',
+  marginTop: '55px',
   marginLeft: '55px',
   marginBottom: '10px',
   width: '550px',
@@ -52,17 +63,16 @@ const Contact = () => {
               style={imageStyle}
               alt="Profile Image"
             />
-            <h1 style={contactHeaderStyle}>Contact Me</h1>
+            <h1 style={contactHeaderStyle}>💻 Contact Me</h1>
             <div style={contactInfoStyle}>
               <p style={contactInfoParagraphStyle}><strong>Email:</strong> vunghia467@gmail.com</p>
-              <p style={contactInfoParagraphStyle}>
+              <p style={contactInfoParagraphStyle1}>
                 <strong>Facebook:</strong> 
                 <a 
                   href="https://www.facebook.com/vu.nghia.18062" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  style={contactInfoLinkStyle}
-                >
+                  style={contactInfoLinkStyle}>
                   VuNghia
                 </a>
               </p>
