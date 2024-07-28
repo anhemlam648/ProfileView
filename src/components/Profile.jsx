@@ -69,7 +69,7 @@
             </Col>
           </Row>
         </Container>
-        <div className="content-section">
+        <div id='SpotifyPlaying' className="content-section">
           <Container>
             <Row>
               <Col className="content">
@@ -91,7 +91,7 @@
           </Container>
           </div>
           <div style={{ textAlign: 'center', fontSize: '50px', color: '#FFCCFF' }}>&#9660;</div>
-          <div className="about-me">
+          <div id="AboutProfile" className="about-me">
           <Container>
               <Row>
               <Col className="content-about">

@@ -8,7 +8,8 @@ const NavBar = () => {
   const [expanded, setExpanded] = useState(false);
   const location = useLocation(); 
   const isContactPage = location.pathname === '/contact';
-
+  const isAboutmePage = location.pathname === '/contact';
+  const SpotifyPlaying = location.pathname === '/contact';
   const navbarStyle = {
     background: 'linear-gradient(135deg, #FF9900, #cc33ff)',
   };
@@ -22,9 +23,9 @@ const NavBar = () => {
     textDecoration: 'none',
   };
 
-  const linkHoverStyle = {
-    opacity: '0.8',
-  };
+  // const linkHoverStyle = {
+  //   opacity: '0.8',
+  // };
 
   const toggleIconStyle = {
     backgroundImage: "url('data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255,255,255,.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e')",
@@ -48,7 +49,9 @@ const NavBar = () => {
         <Navbar.Collapse id="basic-navbar-nav" style={navbarCollapseStyle}>
           <Nav className="me-auto">
             <Nav.Link href="/" style={linkStyle}>Home</Nav.Link>
-            {!isContactPage && <Nav.Link href="#contactProfile" style={linkStyle}>Contact</Nav.Link>}
+            {!isAboutmePage && <Nav.Link href="#AboutProfile" style={linkStyle}>About-Me</Nav.Link>}
+            {!SpotifyPlaying && <Nav.Link href="#SpotifyPlaying" style={linkStyle}>Spotify-Playing</Nav.Link>}
+            {!isContactPage && <Nav.Link href="#contactProfile" style={linkStyle}>Contact</Nav.Link>}          
           </Nav>
           <Nav>
             <Nav.Link href="#">
