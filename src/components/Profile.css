@@ -1,9 +1,11 @@
+/* Profile */
 .profile {
     margin-top: 90px;
     display: flex;
     flex-direction: column;
     background: linear-gradient(135deg, #FF9900, #cc33ff);
   }
+/* Transition Front Letter */
   @keyframes typing {
     from {
       width: 0;
@@ -43,7 +45,7 @@
     margin-bottom: 20px;
     
   }
-  
+  /* Skill */
   .skill-icons {
     display: flex;
     justify-content: center;
@@ -83,6 +85,7 @@
       transform: translateY(-10px); 
     }
   }
+  /* Square-box */
   .square-box {
     height: 200px; 
     display: flex;
@@ -129,20 +132,21 @@
     -webkit-text-fill-color: transparent;
     font-size: 20px;
   }
+  /* Button Contact */
   .button {
     width: 200px;
     margin-left: 540px;
-    font-size: 20px; /* Giảm kích thước font chữ */
-    padding: 8px 16px; /* Điều chỉnh padding cho phần nút */
-    background-color: #007BFF; /* Màu nền của nút */
-    color: white; /* Màu chữ của nút */
-    border: none; /* Loại bỏ viền của nút */
-    border-radius: 20px; /* Bo góc của nút để nó trông tròn hơn */
-    cursor: pointer; /* Biến con trỏ thành dấu nhấp chuột khi di chuột vào nút */
-    transition: background-color 0.3s ease; /* Hiệu ứng chuyển đổi màu nền */
+    font-size: 20px; 
+    padding: 8px 16px; 
+    background-color: #007BFF; 
+    color: white;
+    border: none; 
+    border-radius: 20px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
   }
   
   .button:hover {
-    background-color: #0056b3; /* Màu nền khi di chuột vào */
+    background-color: #0056b3; 
   }
   
