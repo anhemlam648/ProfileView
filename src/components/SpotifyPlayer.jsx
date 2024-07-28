@@ -2,7 +2,7 @@ import { useState } from 'react';
 import YouTube from 'react-youtube'; // Import react-youtube
 
 const SpotifyPlayer = () => {
-  // Danh sách các bài hát
+  // List Sing
   const [songs] = useState([
     {
       id: 1,

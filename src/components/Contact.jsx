@@ -8,6 +8,7 @@ const contactPageStyle = {
   background: '#FFFFFF',
   display: 'flex',
   flexDirection: 'column',
+  marginBottom:'-50px',
 };
 
 const contactHeaderStyle = {
