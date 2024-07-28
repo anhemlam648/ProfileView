@@ -38,7 +38,7 @@
       }, []);
 
     return (
-      <div id="HomeProfile" className="profile">
+      <div id="IntroductionProfile" className="profile">
         <NavBar />
         <Container className="profile-content">
           <Row>

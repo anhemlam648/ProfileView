@@ -2,7 +2,7 @@
 
 ## Overview
 
-The `ProfileView` component is a flexible and interactive React component designed to present detailed user profile information. It includes:
+The `ProfileView` component is a flexible and interactive React component designed to present detailed user profile information.
 
 - **👤 User Information**: Displays comprehensive details about the user, including their name, profile picture, and biography.
 - **🖼️ Profile Picture**: Shows the user’s avatar, which can be customized or updated through an interactive button.

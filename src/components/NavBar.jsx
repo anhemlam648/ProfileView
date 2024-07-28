@@ -8,6 +8,7 @@ const NavBar = () => {
   const [expanded, setExpanded] = useState(false);
   const location = useLocation(); 
   const isContactPage = location.pathname === '/contact';
+  const Introduction = location.pathname === '/contact';
   const isAboutmePage = location.pathname === '/contact';
   const SpotifyPlaying = location.pathname === '/contact';
   const navbarStyle = {
@@ -49,6 +50,7 @@ const NavBar = () => {
         <Navbar.Collapse id="basic-navbar-nav" style={navbarCollapseStyle}>
           <Nav className="me-auto">
             <Nav.Link href="/" style={linkStyle}>Home</Nav.Link>
+            {!Introduction && <Nav.Link href="#IntroductionProfile" style={linkStyle}>Introduction-Me</Nav.Link>}
             {!isAboutmePage && <Nav.Link href="#AboutProfile" style={linkStyle}>About-Me</Nav.Link>}
             {!SpotifyPlaying && <Nav.Link href="#SpotifyPlaying" style={linkStyle}>Spotify-Playing</Nav.Link>}
             {!isContactPage && <Nav.Link href="#contactProfile" style={linkStyle}>Contact</Nav.Link>}          
