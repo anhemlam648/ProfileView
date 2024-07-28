@@ -8,7 +8,7 @@
   import profileImage from "../assets/img/DSC_7431.jpg"; 
   import SpotifyPlayer from '../components/SpotifyPlayer'; 
   import { useNavigate } from "react-router-dom";
-
+  
   const Profile = () => {
   const navigate = useNavigate();
   const handleClick = () => {

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
 import Logotechnology from "../assets/img/logo_nav.png";
-import navIcon1 from "../assets/img/nav-icon1.svg";
+import navIcon1 from "../assets/img/facebook.png";
 
 const NavBar = () => {
   const [expanded, setExpanded] = useState(false);
@@ -54,7 +54,7 @@ const NavBar = () => {
             {!isContactPage && <Nav.Link href="#contactProfile" style={linkStyle}>Contact</Nav.Link>}          
           </Nav>
           <Nav>
-            <Nav.Link href="#">
+            <Nav.Link href="https://www.facebook.com/vu.nghia.18062">
               <img src={navIcon1} alt="Nav Icon" style={{ height: '24px' }} />
             </Nav.Link>
           </Nav>
