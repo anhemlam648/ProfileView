@@ -113,18 +113,21 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 20px;
+    background-origin: padding-box;
   }
   .figma {
     background: linear-gradient(135deg, #00FFFF, #cc33ff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 20px;
+    background-origin: padding-box;
   }
   .network {
     background: linear-gradient(135deg, #CCCCFF, #cc33ff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 20px;
+    background-origin: padding-box;
   }
   .music {
     background: linear-gradient(135deg, #33FF33, #cc33ff);
