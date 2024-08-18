@@ -2,6 +2,7 @@
   import { Container, Row, Col } from "react-bootstrap";
   import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
   import { faCode, faPalette, faUser } from '@fortawesome/free-solid-svg-icons';
+  import { Nav } from "react-bootstrap";
   import NavBar from "./NavBar";
   import Footer from "./Footer";
   import "./Profile.css";
@@ -67,6 +68,11 @@
                 </div>
               </div>
             </Col>
+            <div className="button-cv">
+                  <button>
+                  <Nav.Link href="/show_cv">Explore My CV</Nav.Link>
+                </button>
+            </div>
           </Row>
         </Container>
         <div id='SpotifyPlaying' className="content-section">

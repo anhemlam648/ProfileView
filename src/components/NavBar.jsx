@@ -7,10 +7,13 @@ import navIcon1 from "../assets/img/facebook.png";
 const NavBar = () => {
   const [expanded, setExpanded] = useState(false);
   const location = useLocation(); 
-  const isContactPage = location.pathname === '/contact';
-  const Introduction = location.pathname === '/contact';
-  const isAboutmePage = location.pathname === '/contact';
-  const SpotifyPlaying = location.pathname === '/contact';
+  // const isContactPage = location.pathname === '/contact';
+  // const Introduction = location.pathname === '/contact';
+  // const isAboutmePage = location.pathname === '/contact';
+  // const SpotifyPlaying = location.pathname === '/contact';
+  //update hide with much url
+  const hashToHideLinks = ['/show_cv','/contact'];
+  const HidePages = hashToHideLinks.includes(location.pathname)
   const navbarStyle = {
     background: 'linear-gradient(135deg, #FF9900, #cc33ff)',
   };
@@ -42,6 +45,7 @@ const NavBar = () => {
         <Navbar.Brand href="/" style={brandStyle}>
           <img src={Logotechnology} alt="Logo" style={{ height: '50px' }} />
         </Navbar.Brand>
+        {/* Config with Toggle */}
         <Navbar.Toggle
           aria-controls="basic-navbar-nav"
           onClick={() => setExpanded(expanded ? false : "expanded")}
@@ -50,10 +54,19 @@ const NavBar = () => {
         <Navbar.Collapse id="basic-navbar-nav" style={navbarCollapseStyle}>
           <Nav className="me-auto">
             <Nav.Link href="/" style={linkStyle}>Home</Nav.Link>
-            {!Introduction && <Nav.Link href="#IntroductionProfile" style={linkStyle}>Introduction-Me</Nav.Link>}
+            {/* hide with url */}
+            {!HidePages && (
+              <>
+              <Nav.Link href="#IntroductionProfile" style={linkStyle}>Introduction-Me</Nav.Link>
+              <Nav.Link href="#AboutProfile" style={linkStyle}>About-Me</Nav.Link>
+              <Nav.Link href="#SpotifyPlaying" style={linkStyle}>Spotify-Playing</Nav.Link>
+              <Nav.Link href="#contactProfile" style={linkStyle}>Contact</Nav.Link>
+            </>
+            )}
+            {/* {!Introduction && <Nav.Link href="#IntroductionProfile" style={linkStyle}>Introduction-Me</Nav.Link>}
             {!isAboutmePage && <Nav.Link href="#AboutProfile" style={linkStyle}>About-Me</Nav.Link>}
             {!SpotifyPlaying && <Nav.Link href="#SpotifyPlaying" style={linkStyle}>Spotify-Playing</Nav.Link>}
-            {!isContactPage && <Nav.Link href="#contactProfile" style={linkStyle}>Contact</Nav.Link>}          
+            {!isContactPage && <Nav.Link href="#contactProfile" style={linkStyle}>Contact</Nav.Link>}  */}
           </Nav>
           <Nav>
             <Nav.Link href="https://www.facebook.com/vu.nghia.18062">

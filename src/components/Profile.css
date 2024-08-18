@@ -149,4 +149,21 @@
   .button:hover {
     background-color: #0056b3; 
   }
+
+  /* Button CV */
+  .button-cv button {
+    background: #007bff;
+    color: white; 
+    border: none; 
+    padding: 10px 15px; 
+    border-radius: 10px; 
+    cursor: pointer; 
+    font-size: 16px;
+    transition: backgroundColor 0.3s ease; 
+    margin-left: 605px;
+    margin-top: 20px;
+  }
+  .button-cv button:hover{
+    background-color: #0056b3; 
+  }
   
