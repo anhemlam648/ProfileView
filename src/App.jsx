@@ -11,7 +11,7 @@ function App() {
         <Routes>
         <Route path="/" element={<Profile />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/show_cv" element={<Showcv />} />
+          <Route path="/showcv" element={<Showcv />} />
         </Routes>
       </div>
     </Router>

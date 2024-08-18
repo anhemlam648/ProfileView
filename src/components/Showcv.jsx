@@ -1,4 +1,4 @@
-import cvImage from "../assets/img/Fresher_VuTrungNghia.jpg"; // Import hình ảnh
+import cvImage from "../assets/img/VuTrungNghia.jpg"; 
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 const Show_CV = () => {
@@ -20,7 +20,7 @@ const Show_CV = () => {
   return (
     <div className="main-cv" style={style_main} >
       <NavBar />
-        <img src={cvImage} alt="Images-CV" style={style_image} /> 
+        <img src={cvImage} alt="Images" style={style_image} /> 
       <Footer />
     </div>
   );

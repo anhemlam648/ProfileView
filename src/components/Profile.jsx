@@ -70,7 +70,7 @@
             </Col>
             <div className="button-cv">
                   <button>
-                  <Nav.Link href="/show_cv">Explore My CV</Nav.Link>
+                  <Nav.Link href="/showcv">Explore My CV</Nav.Link>
                 </button>
             </div>
           </Row>

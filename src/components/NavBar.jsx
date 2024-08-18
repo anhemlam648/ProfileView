@@ -12,7 +12,7 @@ const NavBar = () => {
   // const isAboutmePage = location.pathname === '/contact';
   // const SpotifyPlaying = location.pathname === '/contact';
   //update hide with much url
-  const hashToHideLinks = ['/show_cv','/contact'];
+  const hashToHideLinks = ['/showcv','/contact'];
   const HidePages = hashToHideLinks.includes(location.pathname)
   const navbarStyle = {
     background: 'linear-gradient(135deg, #FF9900, #cc33ff)',
