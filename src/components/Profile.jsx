@@ -15,6 +15,9 @@
   const handleClick = () => {
           navigate('/contact');
         };
+  const handleShowCV = () => {
+          navigate('/show');
+  };
   const [dynamicText, setdynamicText] = useState({
           description: "A passionate individual with a keen interest in Web Developer.",
           location: "In Ho Chi Minh, VietNam"
@@ -69,9 +72,7 @@
               </div>
             </Col>
             <div className="button-cv">
-                  <button>
-                  <Nav.Link href="/show">Explore My CV</Nav.Link>
-                </button>
+                  <button onClick={handleShowCV}> Explore My CV</button>
             </div>
           </Row>
         </Container>

@@ -1,4 +1,4 @@
-import cvImage from "../assets/img/Show.png"; 
+import cvImage from "../assets/img/VuTrungNghia.jpg"; 
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 const Show_CV = () => {
