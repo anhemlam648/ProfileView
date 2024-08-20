@@ -3,7 +3,7 @@
     margin-top: 90px;
     display: flex;
     flex-direction: column;
-    background: linear-gradient(135deg, #FF9900, #cc33ff);
+    background: #444444;
   }
 /* Transition Front Letter */
   @keyframes typing {
@@ -21,6 +21,7 @@
     }
   }
   
+  /*container*/
   .typing-container {
     font-size: 2rem;
     text-align: center;
@@ -30,7 +31,25 @@
     margin: 0 auto;
     animation: typing 4s;
   }  
-
+  .typing-container1 {
+    font-size: 2rem;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%; 
+    margin: 0 auto;
+    animation: typing 5s;
+  }  
+  .typing-text::before{
+    content: "I'm Vu Trung Nghia";
+    color: #b74b4b;
+    animation: words 20s infinite;
+  }
+  .typing-text2::before{
+    content: "Web Developer";
+    color: #b74b4b;
+    animation: words 20s infinite;
+  }
   .profile-content {
     padding: 60px 0;
   }
@@ -166,4 +185,33 @@
   .button-cv button:hover{
     background-color: #0056b3; 
   }
+  /* Social */
+  .social-icons {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   
+  .social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background-color: transparent;
+    border: 0.2rem solid #b74b4b;
+    font-size: 2rem;
+    border-radius: 50%;
+    margin: 0 1.5rem;
+    transition: 0.3s ease;
+    color: #b74b4b;
+    text-decoration: none; 
+  }
+  
+  .social-icons a:hover {
+    color: #b74b4b;
+    transform: scale(1.3) translateY(-5px);
+    background-color: #444444;
+    box-shadow: 0 0 25px #b74b4b;
+  }

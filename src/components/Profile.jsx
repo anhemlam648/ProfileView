@@ -2,11 +2,11 @@
   import { Container, Row, Col } from "react-bootstrap";
   import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
   import { faCode, faPalette, faUser } from '@fortawesome/free-solid-svg-icons';
-  import { Nav } from "react-bootstrap";
+  import { faLinkedin, faGithub, faPinterest, faInstagram } from '@fortawesome/free-brands-svg-icons';
   import NavBar from "./NavBar";
   import Footer from "./Footer";
   import "./Profile.css";
-  import profileImage from "../assets/img/DSC_7431.jpg"; 
+  import profileImage from "../assets/img/main.jpg"; 
   import SpotifyPlayer from '../components/SpotifyPlayer'; 
   import { useNavigate } from "react-router-dom";
   
@@ -52,7 +52,8 @@
                   alt="Profile Image"
                   style={{ marginBottom: '10px', width: '220px', height: '300px', borderRadius: '20%' }}
                   />
-              <h1 className="typing-container">Hi 👋, I'm Vu Trung Nghia</h1>
+              <h1 className="typing-container">Hi 👋, <span className="typing-text"></span></h1>
+              <h1 className="typing-container1"> I'm a <span className="typing-text2"></span></h1>
               <p>22 years old</p>
               <p>{dynamicText.description}</p>
               <p>{dynamicText.location}</p>
@@ -73,6 +74,20 @@
             </Col>
             <div className="button-cv">
                   <button onClick={handleShowCV}> Explore My CV</button>
+            </div>
+              <div className="social-icons">
+                <a href="#" aria-label="Linkedin">
+                  <FontAwesomeIcon icon={faLinkedin} />
+                </a>
+                <a href="https://github.com/anhemlam648" aria-label="GitHub">
+                  <FontAwesomeIcon icon={faGithub} />
+                </a>
+                <a href="https://www.pinterest.com/vunghia467/" aria-label="Pinterest">
+                  <FontAwesomeIcon icon={faPinterest} />
+                </a>
+                <a href="#" aria-label="Instagram">
+                  <FontAwesomeIcon icon={faInstagram} />
+                </a>
             </div>
           </Row>
         </Container>

@@ -1,7 +1,7 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import NavBar from './NavBar';
 import Footer from './Footer';
-import Image from "../assets/img/images_vunghia.jpg";
+import Image from "../assets/img/floating-cyberpunk.jpg";
 
 const contactPageStyle = {
   marginTop: '80px',

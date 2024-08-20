@@ -15,7 +15,7 @@ const NavBar = () => {
   const hashToHideLinks = ['/show','/contact'];
   const HidePages = hashToHideLinks.includes(location.pathname)
   const navbarStyle = {
-    background: 'linear-gradient(135deg, #FF9900, #cc33ff)',
+  background: '#DDDDDD',
   };
 
   const brandStyle = {
@@ -25,6 +25,12 @@ const NavBar = () => {
   const linkStyle = {
     color: 'white',
     textDecoration: 'none',
+  };
+  
+  // active
+  const activeLinkStyle = {
+      color: '#b74b4b',
+      borderBottom: '3px solid #b74b4b',
   };
 
   // const linkHoverStyle = {
@@ -38,7 +44,6 @@ const NavBar = () => {
   const navbarCollapseStyle = {
     padding: '0',
   };
-
   return (
     <Navbar expanded={expanded} expand="lg" bg="dark" variant="dark" style={navbarStyle}>
       <Container>
@@ -57,10 +62,10 @@ const NavBar = () => {
             {/* hide with url */}
             {!HidePages && (
               <>
-              <Nav.Link href="#IntroductionProfile" style={linkStyle}>Introduction-Me</Nav.Link>
-              <Nav.Link href="#AboutProfile" style={linkStyle}>About-Me</Nav.Link>
-              <Nav.Link href="#SpotifyPlaying" style={linkStyle}>Spotify-Playing</Nav.Link>
-              <Nav.Link href="#contactProfile" style={linkStyle}>Contact</Nav.Link>
+              <Nav.Link href="#IntroductionProfile" style={location.hash === '#IntroductionProfile' ? activeLinkStyle : linkStyle}>Introduction-Me</Nav.Link>
+              <Nav.Link href="#AboutProfile" style={location.hash === '#AboutProfile' ? activeLinkStyle : linkStyle}>About-Me</Nav.Link>
+              <Nav.Link href="#SpotifyPlaying" style={location.hash === '#SpotifyPlaying' ? activeLinkStyle : linkStyle}>Spotify-Playing</Nav.Link>
+              <Nav.Link href="#contactProfile" style={location.hash === '#contactProfile' ? activeLinkStyle : linkStyle}>Contact</Nav.Link>
             </>
             )}
             {/* {!Introduction && <Nav.Link href="#IntroductionProfile" style={linkStyle}>Introduction-Me</Nav.Link>}
