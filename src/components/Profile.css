@@ -177,10 +177,10 @@
     padding: 10px 15px; 
     border-radius: 10px; 
     cursor: pointer; 
-    font-size: 16px;
+    font-size: 1rem;
     transition: backgroundColor 0.3s ease; 
-    margin-left: 605px;
-    margin-top: 20px;
+    margin-left: 37.8125;
+    margin-top: 1.25rem;
   }
   .button-cv button:hover{
     background-color: #0056b3; 
