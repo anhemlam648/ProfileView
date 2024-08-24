@@ -188,6 +188,7 @@
   /* Social */
   .social-icons {
     margin-top: 50px;
+    margin-left: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
