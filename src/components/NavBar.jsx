@@ -15,7 +15,7 @@ const NavBar = () => {
   const hashToHideLinks = ['/show','/contact'];
   const HidePages = hashToHideLinks.includes(location.pathname)
   const navbarStyle = {
-  background: '#DDDDDD',
+  background: '#363636',
   };
 
   const brandStyle = {
@@ -29,8 +29,8 @@ const NavBar = () => {
   
   // active
   const activeLinkStyle = {
-      color: '#b74b4b',
-      borderBottom: '3px solid #b74b4b',
+      color: '#00FFFF',
+      borderBottom: '3px solid #00FFFF',
   };
 
   // const linkHoverStyle = {

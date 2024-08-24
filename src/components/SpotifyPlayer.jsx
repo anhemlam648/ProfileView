@@ -6,24 +6,24 @@ const SpotifyPlayer = () => {
   const [songs] = useState([
     {
       id: 1,
-      title: 'Từ Ngày Em Đến',
-      artist: 'Da LAB',
-      cover: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQN0QrzyiZ3TjBlW8LK0XZqauA9T-MYIB2reg&s',
-      url: 'https://www.youtube.com/watch?v=AmvA-XJF0j8', 
+      title: 'Lời Yêu Ngây Dại',
+      artist: 'Kha',
+      cover: 'https://photo-resize-zmp3.zadn.vn/w600_r1x1_jpeg/cover/4/7/3/f/473fc5af2cf0acdf58623ce5ea4bfac0.jpg',
+      url: 'https://www.youtube.com/watch?v=UBv-GcD3jHE', 
     },
     {
       id: 2,
-      title: 'Ngày Khác Lạ',
-      artist: 'Đen Vâu',
-      cover: 'https://i.ytimg.com/vi/U1M5GDNNhCo/maxresdefault.jpg',
-      url: 'https://www.youtube.com/watch?v=U1M5GDNNhCo', 
+      title: 'Si Me You',
+      artist: 'Obito',
+      cover: 'https://avatar-ex-swe.nixcdn.com/song/2022/10/12/e/f/6/5/1665525495879_640.jpg',
+      url: 'https://www.youtube.com/watch?v=OJgQGJuihtA', 
     },
     {
       id: 3,
-      title: 'Kém Duyên',
-      artist: 'RUM X NIT X MASEW',
-      cover: 'https://i.ytimg.com/vi/cvoyUIIAdrY/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGGUgXihTMA8=&rs=AOn4CLA6uDliYmtAxJ9zYggjtCdmGIkbHQ',
-      url: 'https://www.youtube.com/watch?v=cvoyUIIAdrY', 
+      title: 'Love Me More',
+      artist: 'The Sheep Original',
+      cover: 'https://photo-resize-zmp3.zadn.vn/w600_r1x1_jpeg/cover/b/e/9/6/be96fcc52e5b5306a03778948d7916f5.jpg',
+      url: 'https://www.youtube.com/watch?v=tB1PoyZtrzY', 
     },
   ]);
 

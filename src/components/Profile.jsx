@@ -2,11 +2,11 @@
   import { Container, Row, Col } from "react-bootstrap";
   import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
   import { faCode, faPalette, faUser } from '@fortawesome/free-solid-svg-icons';
-  import { faLinkedin, faGithub, faPinterest, faInstagram } from '@fortawesome/free-brands-svg-icons';
+  import { faFacebook, faGithub, faPinterest, faInstagram } from '@fortawesome/free-brands-svg-icons';
   import NavBar from "./NavBar";
   import Footer from "./Footer";
   import "./Profile.css";
-  import profileImage from "../assets/img/main.jpg"; 
+  import profileImage from "../assets/img/blue.jpg"; 
   import SpotifyPlayer from '../components/SpotifyPlayer'; 
   import { useNavigate } from "react-router-dom";
   
@@ -47,10 +47,9 @@
         <Container className="profile-content">
           <Row>
             <Col className="profile-intro">
-            <img
+            <img className="profile-image"
                   src={profileImage}
                   alt="Profile Image"
-                  style={{ marginBottom: '10px', width: '220px', height: '300px', borderRadius: '20%' }}
                   />
               <h1 className="typing-container">Hi 👋, <span className="typing-text"></span></h1>
               <h1 className="typing-container1"> I'm a <span className="typing-text2"></span></h1>
@@ -76,8 +75,8 @@
                   <button onClick={handleShowCV}> Explore My CV</button>
             </div>
               <div className="social-icons">
-                <a href="#" aria-label="Linkedin">
-                  <FontAwesomeIcon icon={faLinkedin} />
+                <a href="https://www.facebook.com/vu.nghia.18062" aria-label="Facebook">
+                  <FontAwesomeIcon icon={faFacebook} />
                 </a>
                 <a href="https://github.com/anhemlam648" aria-label="GitHub">
                   <FontAwesomeIcon icon={faGithub} />
