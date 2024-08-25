@@ -29,7 +29,6 @@ html {
 
 /* container */
 .typing-container {
-  font-size: 1.75rem;
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
@@ -39,7 +38,6 @@ html {
 }
 
 .typing-container1 {
-  font-size: 1.75rem; 
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
@@ -47,17 +45,15 @@ html {
   margin: 0 auto;
   animation: typing 5s;
 }
-
-.typing-text::before {
-  font-size: 2.5rem; 
-  content: "I'm Vu Trung Nghia";
+.typing-text1::before {
+  font-size: 1.5rem; 
+  content: " Hi 👋, I'm Vu Trung Nghia";
   color: #00FFFF;
   animation: words 20s infinite;
 }
-
 .typing-text2::before {
-  font-size: 2rem; 
-  content: "Web Developer";
+  font-size: 1.5rem;  
+  content: "I'm a Web Developer";
   color: #00FFFF;
   animation: words 20s infinite;
 }

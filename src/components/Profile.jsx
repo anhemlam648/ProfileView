@@ -51,8 +51,8 @@
                   src={profileImage}
                   alt="Profile Image"
                   />
-              <h1 className="typing-container">Hi 👋, <span className="typing-text"></span></h1>
-              <h1 className="typing-container1"> I'm a <span className="typing-text2"></span></h1>
+              <h1 className="typing-container"><span className="typing-text1"></span></h1>
+              <h1 className="typing-container1"><span className="typing-text2"></span></h1>
               <p>22 years old</p>
               <p>{dynamicText.description}</p>
               <p>{dynamicText.location}</p>
