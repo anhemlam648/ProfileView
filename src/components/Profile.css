@@ -1,232 +1,259 @@
+/* Display with phone */
+html {
+  font-size: 14px; 
+}
+
 /* Profile */
 .profile {
-    margin-top: 90px;
-    display: flex;
-    flex-direction: column;
-    background: #000000;
-  }
-/* Transition Front Letter */
-  @keyframes typing {
-    from {
-      width: 0;
-    }
-    to {
-      width: 100%;
-    }
-  }
-  
-  @keyframes blink {
-    50% {
-      border-color: transparent;
-    }
-  }
-  
-  /*container*/
-  .typing-container {
-    font-size: 2rem;
-    text-align: center;
-    white-space: nowrap;
-    overflow: hidden;
-    width: 100%; 
-    margin: 0 auto;
-    animation: typing 4s;
-  }  
-  .typing-container1 {
-    font-size: 2rem;
-    text-align: center;
-    white-space: nowrap;
-    overflow: hidden;
-    width: 100%; 
-    margin: 0 auto;
-    animation: typing 5s;
-  }  
-  .typing-text::before{
-    content: "I'm Vu Trung Nghia";
-    color: #00FFFF;
-    animation: words 20s infinite;
-  }
-  .typing-text2::before{
-    content: "Web Developer";
-    color: #00FFFF;
-    animation: words 20s infinite;
-  }
-  .profile-content {
-    padding: 60px 0;
-  }
-  
-  .profile h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-  }
-  
-  .profile p {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    
-  }
-  /* Skill */
-  .skill-icons {
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-  }
-  
-  .skill-icon {
-    text-align: center;
-    margin: 0 20px;
-    transition: transform 0.3s ease-out;
-    animation: bounce 2s infinite alternate; 
-  }
-  
-  .skill-icon img {
-    width: 100px;
-    height: 100px;
-    border: 2px solid #333;
-    border-radius: 50%;
-    padding: 10px;
-  }
-  
-  .skill-icon p {
-    font-size: 1.2rem;
-    margin-top: 10px;
-    text-align: center;
-  }
-  
-  .profile-intro {
-    text-align: center;
-  }
-  
-  @keyframes bounce {
-    0% {
-      transform: translateY(0); 
-    }
-    100% {
-      transform: translateY(-10px); 
-    }
-  }
-  /* Square-box */
-  .square-box {
-    height: 200px; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #FFFFFF;  
-    margin: 10px 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-    transition: transform 0.3s ease, box-shadow 0.3s ease; 
-    border-radius: 20px;
-  }
-  
-  .square-box:hover {
-    transform: translateY(-10px); 
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
-  }
-  
-  .square-box p {
-    text-align: center;
-    margin: 0;
-    color: 	#000000;
-  }
-  .education {
-    background: linear-gradient(135deg, #FF9900, #cc33ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 20px;
-  }
-  .figma {
-    background: linear-gradient(135deg, #00FFFF, #cc33ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 20px;
-  }
-  .network {
-    background: linear-gradient(135deg, #CCCCFF, #cc33ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 20px;
-  }
-  .music {
-    background: linear-gradient(135deg, #33FF33, #cc33ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 20px;
-  }
-  /* Button Contact */
-  .button {
-    width: 200px;
-    margin-left: 540px;
-    font-size: 20px; 
-    padding: 8px 16px; 
-    background-color: #007BFF; 
-    color: white;
-    border: none; 
-    border-radius: 20px; 
-    cursor: pointer; 
-    transition: background-color 0.3s ease; 
-  }
-  
-  .button:hover {
-    background-color: #0056b3; 
-  }
+  margin-top: 5rem; 
+  display: flex;
+  flex-direction: column;
+  background: #000000;
+}
 
-  /* Button CV */
-  .button-cv button {
-    background: #007bff;
-    color: white; 
-    border: none; 
-    padding: 10px 15px; 
-    border-radius: 10px; 
-    cursor: pointer; 
-    font-size: 1rem;
-    transition: backgroundColor 0.3s ease; 
-    margin-left: 37.8125rem;
-    margin-top: 1.25rem;
+/* Transition */
+@keyframes typing {
+  from {
+      width: 0;
   }
-  .button-cv button:hover{
-    background-color: #0056b3; 
+  to {
+      width: 100%;
   }
-  /* Social */
-  .social-icons {
-    margin-top: 50px;
-    margin-left: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+}
+
+@keyframes blink {
+  50% {
+      border-color: transparent;
   }
-  
-  .social-icons a {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 4rem;
-    height: 4rem;
-    background-color: transparent;
-    border: 0.2rem solid #1E90FF;
-    font-size: 2rem;
-    border-radius: 50%;
-    margin: 0 1.5rem;
-    transition: 0.3s ease;
-    color: #00FFFF;
-    text-decoration: none; 
+}
+
+/* container */
+.typing-container {
+  font-size: 1.75rem;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+  animation: typing 4s;
+}
+
+.typing-container1 {
+  font-size: 1.75rem; 
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+  animation: typing 5s;
+}
+
+.typing-text::before {
+  content: "I'm Vu Trung Nghia";
+  color: #00FFFF;
+  animation: words 20s infinite;
+}
+
+.typing-text2::before {
+  content: "Web Developer";
+  color: #00FFFF;
+  animation: words 20s infinite;
+}
+
+.profile-content {
+  padding: 3rem 0; 
+}
+
+.profile h1 {
+  font-size: 2.5rem; 
+  margin-bottom: 0.5rem; 
+}
+
+.profile p {
+  font-size: 1.25rem; 
+  margin-bottom: 1rem; 
+}
+
+/* Skill */
+.skill-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1.5rem; 
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.skill-icon {
+  text-align: center;
+  margin: 0 1rem; 
+  transition: transform 0.3s ease-out;
+  animation: bounce 2s infinite alternate;
+}
+
+.skill-icon img {
+  width: 5rem; 
+  height: 5rem; 
+  border: 0.125rem solid #333;
+  border-radius: 50%;
+  padding: 0.5rem; 
+}
+
+.skill-icon p {
+  font-size: 1rem; 
+  margin-top: 0.5rem; 
+  text-align: center;
+}
+
+.profile-intro {
+  text-align: center;
+}
+
+@keyframes bounce {
+  0% {
+      transform: translateY(0);
   }
-  
-  .social-icons a:hover {
-    color: #00FFFF;
-    transform: scale(1.3) translateY(-5px);
-    background-color: #1E90FF;    ;
-    box-shadow: 0 0 25px #00FFFF;
+  100% {
+      transform: translateY(-0.5rem); 
   }
-  /* Images */
-  .profile-image {
-    margin-bottom: 10px;
-    width: 300px;
-    height: 250px;
-    border-radius: 20%;
-    transition: all 0.3s ease;
+}
+
+/* Square-box */
+.square-box {
+  height: 10rem; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FFFFFF;
+  margin: 0.5rem 0; 
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 1rem; 
+}
+
+.square-box:hover {
+  transform: translateY(-0.5rem); 
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3); 
+}
+
+.square-box p {
+  text-align: center;
+  margin: 0;
+  color: #000000;
+}
+
+.education {
+  background: linear-gradient(135deg, #FF9900, #cc33ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.25rem; 
+}
+
+.figma {
+  background: linear-gradient(135deg, #00FFFF, #cc33ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.25rem;
+}
+
+.network {
+  background: linear-gradient(135deg, #CCCCFF, #cc33ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.25rem;
+}
+
+.music {
+  background: linear-gradient(135deg, #33FF33, #cc33ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.25rem; 
+}
+
+/* Button Contact */
+.button {
+  width: 10rem; 
+  margin-left: auto; 
+  margin-right: auto; 
+  font-size: 1rem; 
+  padding: 0.5rem 1rem; 
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 1rem; 
+  cursor: pointer;
+  display: block;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+/* Button CV */
+.button-cv button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem; 
+  border-radius: 0.5rem; 
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  margin: 0.1rem auto 0; 
+  display: block; 
+  transform: translateX(7px); /*  value to move the right */
+}
+
+.button-cv button:hover {
+  background-color: #0056b3;
+}
+
+/* Social */
+.social-icons {
+  margin-top: 2rem; 
+  margin-left: 0.6rem; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-icons a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 3.5rem; 
+  height: 3.5rem; 
+  background-color: transparent;
+  border: 0.2rem solid #1E90FF; 
+  font-size: 1.75rem; 
+  border-radius: 50%;
+  margin: 0 1rem; 
+  transition: 0.3s ease;
+  color: #00FFFF;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  color: #00FFFF;
+  transform: scale(1.2) translateY(-0.25rem);
+  background-color: #1E90FF;
+  box-shadow: 0 0 1.25rem #00FFFF;
+}
+
+/* Images */
+.profile-image {
+  margin-bottom: 1rem; 
+  width: 20rem; 
+  margin-right: auto;
+  margin-left: auto;
+  height: 15rem; 
+  border-radius: 20%;
+  transition: all 0.3s ease;
 }
 
 .profile-image:hover {
-    filter: brightness(1.2); 
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.8); 
-    transform: scale(1.05); 
+  filter: brightness(1.2);
+  box-shadow: 0 0 0.75rem rgba(0, 255, 255, 0.8); 
+  transform: scale(1.05);
 }

@@ -14,14 +14,18 @@ const NavBar = () => {
   //update hide with much url
   const hashToHideLinks = ['/show','/contact'];
   const HidePages = hashToHideLinks.includes(location.pathname)
+
+  //navbar
   const navbarStyle = {
   background: '#363636',
   };
 
+  //brand
   const brandStyle = {
     width: '50px',
   };
 
+  //link
   const linkStyle = {
     color: 'white',
     textDecoration: 'none',
@@ -33,6 +37,12 @@ const NavBar = () => {
       borderBottom: '3px solid #00FFFF',
   };
 
+  // imagesStyle
+  const imageStyle = {
+    height: '1.5rem',
+    width: 'auto', 
+  };
+  
   // const linkHoverStyle = {
   //   opacity: '0.8',
   // };
@@ -75,7 +85,7 @@ const NavBar = () => {
           </Nav>
           <Nav>
             <Nav.Link href="https://www.facebook.com/vu.nghia.18062">
-              <img src={navIcon1} alt="Nav Icon" style={{ height: '24px' }} />
+              <img src={navIcon1} alt="Nav Icon" style={imageStyle} />
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

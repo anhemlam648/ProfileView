@@ -1,27 +1,35 @@
 import cvImage from "../assets/img/VuTrungNghia.jpg"; 
 import NavBar from "../components/NavBar";
-import Footer from "../components/Footer";
+
 const Show_CV = () => {
-  const style_main ={
+
+  //style-main
+  const style_main = {
     backgroundColor: '#FFFFFF',
-  }
-  const style_image ={
-   marginTop: '95px',
-   display: 'flex',
-   width: '50%',
-   padding: '10px',
-   alignItems: 'center',
-   backgroundColor: '#EEEEEE',
-   boxSizing: 'border-box',
-   borderRadius: '10px',
-   marginLeft: '380px',
-   marginBottom: '-50px',
-  }
+    minHeight: '100vh', 
+    padding: '1rem', 
+    boxSizing: 'border-box', // Includes padding and border in the element's total width and height
+    display: 'flex', // Enables flexbox layout.
+    flexDirection: 'row', // Should be 'row' or 'column'.
+    alignItems: 'center',  // Centers items along the cross axis.
+    justifyContent: 'center', //Centers items along the main axis.
+  };
+
+  //style-images
+  const style_images = {
+    marginTop: '4rem', 
+    width: '90%', 
+    maxWidth: '450px', 
+    padding: '0.5rem', 
+    backgroundColor: '#EEEEEE',
+    borderRadius: '0.5rem', 
+    marginBottom: '-2.5rem', 
+  };
+
   return (
-    <div className="main-cv" style={style_main} >
+    <div className="main-cv" style={style_main}>
       <NavBar />
-        <img src={cvImage} alt="Images" style={style_image} /> 
-      <Footer />
+      <img src={cvImage} alt="CV" style={style_images} />  
     </div>
   );
 };

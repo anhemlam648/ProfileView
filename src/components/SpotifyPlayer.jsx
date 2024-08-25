@@ -27,47 +27,72 @@ const SpotifyPlayer = () => {
     },
   ]);
 
+  //container
   const containerStyle = {
-    padding: '20px',
+    padding: '1rem',
   };
 
+  //list
   const listStyle = {
     listStyleType: 'none',
     padding: 0,
   };
 
+  //songItem
   const songItemStyle = {
     display: 'flex',
+    flexDirection: 'column', 
     alignItems: 'center',
-    marginBottom: '10px',
+    marginBottom: '0.75rem', 
     backgroundColor: '#f9f9f9',
-    padding: '10px',
-    borderRadius: '8px',
+    padding: '0.75rem',
+    borderRadius: '0.5rem', 
+    position: 'relative',
   };
 
+  //images
   const imgStyle = {
-    width: '80px',
-    height: '80px',
+    width: '4.5rem',
+    height: '4.5rem', 
     borderRadius: '50%',
-    marginRight: '20px',
+    marginBottom: '0.5rem', 
   };
 
+  //songInfo
   const songInfoStyle = {
-    flex: 1,
+    textAlign: 'center',
+    marginBottom: '0.5rem', 
   };
 
+  //songtitle
   const songTitleStyle = {
     fontWeight: 'bold',
     color: '#888',
+    fontSize: '1rem', 
   };
 
+  //songArtist
   const songArtistStyle = {
     fontStyle: 'italic',
     color: '#888',
+    fontSize: '0.875rem', 
   };
+
+  //playContainer
+  const playerContainerStyle = {
+    width: '100%', 
+    maxWidth: '16rem', 
+    height: 'auto',
+    maxHeight: '9rem',
+    marginTop: '0.5rem', 
+    marginBottom: '2rem',
+    borderRadius: '0.5rem', 
+    overflow: 'hidden', 
+  };
+
   return (
     <div style={containerStyle}>
-      <h2 style={{ fontSize: '23px' }}>Spotify Playing 🎧</h2>
+      <h2 style={{ fontSize: '1.375rem' }}>Spotify Playing 🎧</h2> 
       <ul style={listStyle}>
         {songs.map((song) => (
           <li key={song.id} style={songItemStyle}>
@@ -76,12 +101,13 @@ const SpotifyPlayer = () => {
               <p style={songTitleStyle}>{song.title}</p>
               <p style={songArtistStyle}>{song.artist}</p>
             </div>
-            {song.url.includes('youtube.com') && (
-              <YouTube videoId={song.url.split('v=')[1]} opts={{ width: '100%', height: '100%' }} />
-            )}
-            {!song.url.includes('youtube.com') && (
-              <audio src={song.url} autoPlay controls />
-            )}
+            <div style={playerContainerStyle}>
+              {song.url.includes('youtube.com') ? (
+                <YouTube videoId={song.url.split('v=')[1]} opts={{ width: '100%', height: '100%' }} />
+              ) : (
+                <audio src={song.url} autoPlay controls style={{ width: '100%' }} />
+              )}
+            </div>
           </li>
         ))}
       </ul>

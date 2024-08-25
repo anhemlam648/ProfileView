@@ -1,36 +1,45 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import NavBar from './NavBar';
-import Footer from './Footer';
 import Image from "../assets/img/floating-cyberpunk.jpg";
 
+//contactPage
 const contactPageStyle = {
-  marginTop: '80px',
-  background: '#FFFFFF',
-  display: 'flex',
-  flexDirection: 'column',
-  marginBottom:'-50px',
+  backgroundColor: '#FFFFFF',
+  minHeight: '100vh', 
+  padding: '1rem', 
+  boxSizing: 'border-box', 
+  display: 'flex', 
+  flexDirection: 'row', 
+  alignItems: 'center', 
+  justifyContent: 'center'
+  
 };
 
-const contactHeaderStyle = {
+//contactFooter
+const contactFooterStyle = {
+  marginTop: '1rem',
   textAlign: 'center',
-  marginTop: '10px',
   color: '#333',
-  marginBottom: '-10px',
+  fontSize: '1.5rem', 
+  marginLeft: 'auto', 
+  marginRight: 'auto', 
+  display: 'block', 
 };
 
+//contactInfo
 const contactInfoStyle = {
-  marginTop: '20px',
-  fontSize: '18px',
+  marginTop: '1rem',
+  fontSize: '1rem', 
 };
 
 const contactInfoParagraphStyle = {
-  marginBottom: '10px',
+  marginBottom: '0.75rem', 
   textAlign: 'center',
   color: '#000000',
 };
 
 const contactInfoParagraphStyle1 = {
-  marginBottom: '10px',
+  marginBottom: '0.75rem', 
   textAlign: 'center',
   color: '#000000',
   display: 'flex',
@@ -40,17 +49,24 @@ const contactInfoParagraphStyle1 = {
 
 const contactInfoLinkStyle = {
   color: '#007bff',
-  marginLeft: '5px', 
+  marginLeft: '0.25rem', 
 };
 
+//images
 const imageStyle = {
-  marginTop: '55px',
-  marginLeft: '55px',
-  marginBottom: '10px',
-  width: '550px',
-  height: '350px',
-  borderRadius: '15%',
+  marginTop: '5rem', 
+  width: '90%', 
+  maxWidth: '450px', 
+  padding: '0.5rem', 
+  marginLeft: 'auto', 
+  marginRight: 'auto', 
+  display: 'block', 
+  backgroundColor: '#EEEEEE', 
+  borderRadius: '0.5rem', 
+  marginBottom: '1rem', 
 };
+
+
 
 const Contact = () => {
   return (
@@ -58,13 +74,13 @@ const Contact = () => {
       <NavBar />
       <Container>
         <Row className="justify-content-center">
-          <Col md={6}>
+          <Col xs={12} md={8}>
             <img
               src={Image}
               style={imageStyle}
               alt="Profile Image"
             />
-            <h1 style={contactHeaderStyle}>💻 Contact Me</h1>
+            <h1 style={contactFooterStyle}>💻 Contact Me</h1>
             <div style={contactInfoStyle}>
               <p style={contactInfoParagraphStyle}><strong>Email:</strong> vunghia467@gmail.com</p>
               <p style={contactInfoParagraphStyle1}>
@@ -81,7 +97,6 @@ const Contact = () => {
           </Col>
         </Row>
       </Container>
-      <Footer />
     </div>
   );
 };
