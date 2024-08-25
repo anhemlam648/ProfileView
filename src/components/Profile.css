@@ -49,12 +49,14 @@ html {
 }
 
 .typing-text::before {
+  font-size: 2.5rem; 
   content: "I'm Vu Trung Nghia";
   color: #00FFFF;
   animation: words 20s infinite;
 }
 
 .typing-text2::before {
+  font-size: 2rem; 
   content: "Web Developer";
   color: #00FFFF;
   animation: words 20s infinite;
