@@ -9,6 +9,7 @@ html {
   display: flex;
   flex-direction: column;
   background: #000000;
+  z-index: 1;
 }
 
 /* Transition */

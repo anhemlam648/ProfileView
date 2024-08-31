@@ -5,6 +5,7 @@ const footerStyle = {
   color: 'white',
   padding: '1rem 0', 
   marginTop: '2rem', 
+  zIndex: 1,
 };
 //heading
 const headingStyle = {

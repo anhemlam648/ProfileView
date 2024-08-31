@@ -18,6 +18,7 @@ const NavBar = () => {
   //navbar
   const navbarStyle = {
   background: '#363636',
+  zIndex: 1,
   };
 
   //brand
