@@ -19,6 +19,7 @@ const NavBar = () => {
   const navbarStyle = {
     background: '#363636',
     width: '100%',
+    padding: '1rem 0', 
   };
 
   //brand
@@ -65,7 +66,7 @@ const NavBar = () => {
     <Navbar expanded={expanded} expand="lg" bg="dark" variant="dark" style={navbarStyle}>
       <Container>
         <Navbar.Brand href="/" style={brandStyle}>
-          <img src={Logotechnology} alt="Logo" style={{ height: '50px', width:'auto' }} />
+          <img src={Logotechnology} alt="Logo" style={{ height: '3.125rem', width:'auto'}} />
         </Navbar.Brand>
         {/* Config with Toggle */}
         <Navbar.Toggle
