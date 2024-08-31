@@ -6,7 +6,7 @@
   import NavBar from "./NavBar";
   import Footer from "./Footer";
   import "./Profile.css";
-  import profileImage from "../assets/img/images-Gaming.png"; 
+  import profileImage from "../assets/img/computer.jpg"; 
   import SpotifyPlayer from '../components/SpotifyPlayer'; 
   import { useNavigate } from "react-router-dom";
   
