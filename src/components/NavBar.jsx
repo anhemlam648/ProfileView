@@ -63,7 +63,7 @@ const NavBar = () => {
     marginLeft:'0.5rem'
   };
   return (
-    <Navbar expanded={expanded} expand="lg" bg="dark" variant="dark" style={{ padding: '0.7rem 0', width:'80%',margin: '0 auto' }}>
+    <Navbar expanded={expanded} expand="lg" bg="dark" variant="dark" style={{ padding: '0.7rem 0', maxWidth: '1200px',margin: '0 auto' }}>
       <Container>
         <Navbar.Brand href="/" style={brandStyle}>
           <img src={Logotechnology} alt="Logo" style={{ height: '3.125rem', width:'auto'}} />
