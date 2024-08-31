@@ -17,32 +17,29 @@ const NavBar = () => {
 
   //navbar
   const navbarStyle = {
-  background: '#363636',
-  zIndex: 1,
+    background: '#363636',
+    width: '100%',
   };
 
-  //brand
   const brandStyle = {
-    width: '50px',
+    height: '50px',
   };
 
-  //link
   const linkStyle = {
     color: 'white',
     textDecoration: 'none',
   };
-  
-  // active
+
   const activeLinkStyle = {
-      color: '#00FFFF',
-      borderBottom: '3px solid #00FFFF',
+    color: '#00FFFF',
+    borderBottom: '3px solid #00FFFF',
   };
 
-  // imagesStyle
   const imageStyle = {
     height: '1.5rem',
-    width: 'auto', 
+    width: 'auto',
   };
+
   
   // const linkHoverStyle = {
   //   opacity: '0.8',
@@ -54,12 +51,13 @@ const NavBar = () => {
 
   const navbarCollapseStyle = {
     padding: '0',
+    marginLeft:'-3.75rem'
   };
   return (
     <Navbar expanded={expanded} expand="lg" bg="dark" variant="dark" style={navbarStyle}>
       <Container>
         <Navbar.Brand href="/" style={brandStyle}>
-          <img src={Logotechnology} alt="Logo" style={{ height: '50px' }} />
+          <img src={Logotechnology} alt="Logo" style={{ height: '50px', width:'auto' }} />
         </Navbar.Brand>
         {/* Config with Toggle */}
         <Navbar.Toggle
