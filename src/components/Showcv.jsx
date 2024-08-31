@@ -5,7 +5,7 @@ const Show_CV = () => {
 
   //style-main
   const style_main = {
-    backgroundColor: '#FFFFFF',
+    background: 'linear-gradient(to right, #ff5722, #ffd700)',
     minHeight: '100vh', 
     padding: '1rem', 
     boxSizing: 'border-box', // Includes padding and border in the element's total width and height

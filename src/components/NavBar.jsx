@@ -15,12 +15,6 @@ const NavBar = () => {
   const hashToHideLinks = ['/show','/contact'];
   const HidePages = hashToHideLinks.includes(location.pathname)
 
-  //navbar
-  // const navbarStyles = {
-  //   background: '#363636',
-  //   width: '100%',
-  //   padding: '1rem 0', 
-  // };
 
   //brand
   const brandStyle = {
@@ -31,14 +25,14 @@ const NavBar = () => {
   const linkStyle = {
     color: 'white',
     textDecoration: 'none',
-    padding: '0.3rem 0.5rem', 
-    fontSize: '0.85rem'
+    padding: '0.6rem', 
+    fontSize: '0.9rem'
   };
 
   //activel
   const activeLinkStyle = {
     color: '#00FFFF',
-    borderBottom: '2px solid #00FFFF',
+    borderBottom: '3px solid #00FFFF',
   };
 
   //images
@@ -57,8 +51,6 @@ const NavBar = () => {
   const toggleIconStyle = {
     marginLeft:'-1rem',
     marginRight:'1rem',
-    fontSize: '0.85rem',
-    padding:'0.2rem',
     backgroundImage: "url('data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255,255,255,.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e')",
   };
 
@@ -68,10 +60,11 @@ const NavBar = () => {
     marginLeft:'0.5rem'
   };
   return (
-    <Navbar expanded={expanded} expand="lg" bg="dark" variant="dark" style={{ padding: '0.7rem 0', maxWidth: '100vw', margin: '0 auto', overflowX: 'hidden'  }}>
+    // <Navbar expanded={expanded} expand="lg" bg="dark" variant="dark" style={{ padding: '0.7rem 0', maxWidth: '100vw', margin: '0 auto', overflowX: 'hidden' }}>
+     <Navbar expanded={expanded} expand="lg" style={{ padding: '0.8rem 0', maxWidth: '100vw', margin: '0 auto', overflowX: 'hidden',background: 'linear-gradient(to right, #ff5722, #ffd700)',borderBottom: '2px solid #ffeb3b' }}>
       <Container fluid style={{ maxWidth: '95vw', padding: '0' }}>
         <Navbar.Brand href="/" style={brandStyle}>
-          <img src={Logotechnology} alt="Logo" style={{ height: '3.125rem', width:'auto',marginLeft:'0.6rem'}} />
+          <img src={Logotechnology} alt="Logo" style={{ height: '3.125rem', width:'auto',marginLeft:'1rem', marginRight:'-5rem'}} />
         </Navbar.Brand>
         {/* Config with Toggle */}
         <Navbar.Toggle

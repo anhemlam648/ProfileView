@@ -6,7 +6,7 @@
   import NavBar from "./NavBar";
   import Footer from "./Footer";
   import "./Profile.css";
-  import profileImage from "../assets/img/blue.jpg"; 
+  import profileImage from "../assets/img/images-Gaming.png"; 
   import SpotifyPlayer from '../components/SpotifyPlayer'; 
   import { useNavigate } from "react-router-dom";
   
@@ -40,7 +40,29 @@
         }, 6000);
           return () => clearInterval(timer);
       }, []);
-
+      useEffect(() => {
+        const profileElement = document.getElementById('IntroductionProfile');
+    
+        if (profileElement) {
+          // create snow
+          const snowfallDiv = document.createElement('div');
+          snowfallDiv.className = 'snowfall';
+          profileElement.appendChild(snowfallDiv);
+    
+          // create location snow
+          for (let i = 0; i < 80; i++) {
+            const snowflake = document.createElement('div');
+            snowflake.className = 'snowflake';
+            
+            // random snow
+            snowflake.style.left = `${Math.random() * 100}%`;
+            snowflake.style.right = `${Math.random() * 100}%`;
+            snowflake.style.animationDuration = `${Math.random() * 10 + 5}s`;
+            snowflake.style.opacity = `${Math.random() * 1 + 1}`;
+            snowfallDiv.appendChild(snowflake);
+          }
+        }
+      }, []);
     return (
       <div id="IntroductionProfile" className="profile">
         <NavBar />
@@ -167,6 +189,7 @@
           </Container>
           </div>
             </div>
+            <hr/>
         <Footer />
       </div>
     );

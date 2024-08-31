@@ -4,7 +4,7 @@ import Image from "../assets/img/floating-cyberpunk.jpg";
 
 //contactPage
 const contactPageStyle = {
-  backgroundColor: '#FFFFFF',
+  background: 'linear-gradient(to right, #ff5722, #ffd700)',
   minHeight: '100vh', 
   padding: '1rem', 
   boxSizing: 'border-box', 

@@ -8,7 +8,7 @@ html {
   margin-top: 5rem; 
   display: flex;
   flex-direction: column;
-  background: #000000;
+  background: linear-gradient(to right, #ff5722, #ffd700);
   z-index: 1;
 }
 
@@ -19,6 +19,16 @@ html {
   }
   to {
       width: 100%;
+  }
+  
+}
+
+@keyframes underline {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
   }
 }
 
@@ -35,23 +45,40 @@ html {
   overflow: hidden;
   width: 100%;
   margin: 0 auto;
-  animation: typing 4s;
+  position: relative;
+  animation: typing 6s;
+  overflow: hidden;
 }
-
+/* container 1*/
 .typing-container1 {
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
   width: 100%;
   margin: 0 auto;
-  animation: typing 5s;
+  animation: typing 6s;
 }
+/* animation */
+/* .typing-container::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0px;
+  width: 0.125rem; 
+  height: 1em; 
+  background: #ffd700;
+  transform-origin: bottom;
+  animation: blink 0.5s step-start infinite;
+} */
+/* typing text 1 */
 .typing-text1::before {
   font-size: 1.5rem; 
   content: " Hi 👋, I'm Vu Trung Nghia";
   color: #00FFFF;
   animation: words 20s infinite;
+  
 }
+/* typing text 2 */
 .typing-text2::before {
   font-size: 1.5rem;  
   content: "I'm a Web Developer";
@@ -81,6 +108,7 @@ html {
   margin-top: 1.5rem; 
   margin-left: auto;
   margin-right: auto;
+  transform: translate(-8px, 1px);
 }
 
 .skill-icon {
@@ -187,31 +215,41 @@ html {
 
 .button:hover {
   background-color: #0056b3;
+  filter: brightness(1.2);
+  box-shadow: 0 0 0.75rem rgba(255, 255, 0.8); 
+  transform: scale(1.2);
+  
 }
 
 /* Button CV */
 .button-cv button {
-  background: #007bff;
+  width: 10rem; 
+  margin-left: auto; 
+  margin-right: auto; 
+  font-size: 1rem; 
+  padding: 0.5rem 1rem; 
+  background-color: #007BFF;
   color: white;
   border: none;
-  padding: 0.5rem 1rem; 
-  border-radius: 0.5rem; 
+  border-radius: 1rem; 
   cursor: pointer;
-  font-size: 1rem;
+  display: block;
   transition: background-color 0.3s ease;
-  margin: 0.1rem auto 0; 
-  display: block; 
-  transform: translateX(7px); /*  value to move the right */
 }
 
 .button-cv button:hover {
   background-color: #0056b3;
+  filter: brightness(1.2);
+  box-shadow: 0 0 0.75rem rgba(255, 255, 0.8); 
+  transform: scale(1.2);
+
 }
 
 /* Social */
 .social-icons {
   margin-top: 2rem; 
-  margin-left: 0.6rem; 
+  margin-left: auto; 
+  margin-right: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -253,6 +291,45 @@ html {
 
 .profile-image:hover {
   filter: brightness(1.2);
-  box-shadow: 0 0 0.75rem rgba(0, 255, 255, 0.8); 
+  box-shadow: 0 0 0.75rem rgba(255, 255, 0.8); 
   transform: scale(1.05);
+}
+
+ /* snow */
+.snowfall {
+  position: absolute; /* Make sure it covers the entire parent element */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden; /* To keep snow out of the element */
+  pointer-events: none; /* So as not to affect other elements */
+}
+
+.snowflake {
+  position: relative; 
+  width: 0.5rem; 
+  height: 0.5rem; 
+  background-color: rgba(255, 255, 0, 0.8); 
+  border-radius: 80%; 
+  opacity: 0.8; 
+  animation: snow 9s linear infinite; 
+}
+
+@keyframes snow {
+  0% {
+    transform: translateY(-100vh); 
+    opacity: 0.8rem;
+  }
+  20%{
+    transform: translateY(-80vh); 
+    opacity: 0.8rem;
+  }
+  30%{
+    transform: translateY(-50vh); 
+    opacity: 0.8rem;
+  }
+  100% {
+    transform: translateY(400vh); 
+  }
 }

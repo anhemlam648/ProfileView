@@ -1,11 +1,12 @@
 import { Container, Row, Col } from "react-bootstrap";
 
 const footerStyle = {
-  background: '#363636',
+  background: 'linear-gradient(to right, #ff5722, #ffd700)',
   color: 'white',
   padding: '1rem 0', 
-  marginTop: '2rem', 
+  marginTop: '-0.9rem', 
   zIndex: 1,
+  borderBottom: '2px solid #ffeb3b' 
 };
 //heading
 const headingStyle = {
