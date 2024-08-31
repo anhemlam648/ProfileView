@@ -36,7 +36,7 @@ const NavBar = () => {
   //activel
   const activeLinkStyle = {
     color: '#00FFFF',
-    borderBottom: '3px solid #00FFFF',
+    borderBottom: '2px solid #00FFFF',
   };
 
   //images
@@ -56,6 +56,11 @@ const NavBar = () => {
     marginRight:'1rem',
     backgroundImage: "url('data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255,255,255,.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e')",
   };
+  const containerStyle = {
+    maxWidth: '1200px', 
+    width: '100%',
+    margin: '0 auto',
+  };
 
   //navbar collap
   const navbarCollapseStyle = {
@@ -63,8 +68,8 @@ const NavBar = () => {
     marginLeft:'0.5rem'
   };
   return (
-    <Navbar expanded={expanded} expand="lg" bg="dark" variant="dark">
-      <Container>
+    <Navbar expanded={expanded} expand="lg" bg="dark" variant="dark" style={{ padding: '0.7rem 0' }}>
+      <Container style={containerStyle}>
         <Navbar.Brand href="/" style={brandStyle}>
           <img src={Logotechnology} alt="Logo" style={{ height: '3.125rem', width:'auto'}} />
         </Navbar.Brand>
