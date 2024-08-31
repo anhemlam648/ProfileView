@@ -16,11 +16,11 @@ const NavBar = () => {
   const HidePages = hashToHideLinks.includes(location.pathname)
 
   //navbar
-  const navbarStyle = {
-    background: '#363636',
-    width: '100%',
-    padding: '1rem 0', 
-  };
+  // const navbarStyles = {
+  //   background: '#363636',
+  //   width: '100%',
+  //   padding: '1rem 0', 
+  // };
 
   //brand
   const brandStyle = {
@@ -63,7 +63,7 @@ const NavBar = () => {
     marginLeft:'0.5rem'
   };
   return (
-    <Navbar expanded={expanded} expand="lg" bg="dark" variant="dark" style={navbarStyle}>
+    <Navbar expanded={expanded} expand="lg" bg="dark" variant="dark">
       <Container>
         <Navbar.Brand href="/" style={brandStyle}>
           <img src={Logotechnology} alt="Logo" style={{ height: '3.125rem', width:'auto'}} />
