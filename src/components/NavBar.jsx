@@ -51,15 +51,15 @@ const NavBar = () => {
 
   //toggle
   const toggleIconStyle = {
-    marginLeft: '-4rem',
-    width:'auto',
+    marginLeft:'-1rem',
+    marginRight:'1rem',
     backgroundImage: "url('data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255,255,255,.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e')",
   };
 
-  //navbarcollap
+  //navbar collap
   const navbarCollapseStyle = {
     padding: '0',
-    marginLeft:'-3.75rem'
+    marginLeft:'0.5rem'
   };
   return (
     <Navbar expanded={expanded} expand="lg" bg="dark" variant="dark" style={navbarStyle}>
