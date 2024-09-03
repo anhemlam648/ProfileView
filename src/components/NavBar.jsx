@@ -14,8 +14,7 @@ const NavBar = () => {
   //update hide with much url
   const hashToHideLinks = ['/show','/contact'];
   const HidePages = hashToHideLinks.includes(location.pathname)
-
-
+  
   //brand
   const brandStyle = {
     height: '3.5rem',

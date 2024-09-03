@@ -1,44 +1,57 @@
+import { useState } from 'react';
 import { Container, Row, Col } from "react-bootstrap";
 
-const footerStyle = {
-  background: 'linear-gradient(to right, #ff5722, #ffd700)',
-  color: 'white',
-  padding: '1rem 0', 
-  marginTop: '-0.9rem', 
-  zIndex: 1,
-  borderBottom: '2px solid #ffeb3b' 
-};
-//heading
-const headingStyle = {
-  color: 'white',
-  fontSize: '1.25rem', 
-  textAlign: 'center', 
-};
-
-//heading1
-const headingStyle1 = {
-  color: 'white',
-  fontSize: '1rem', 
-  textAlign: 'center', 
-};
-
-//link
-const linkStyle = {
-  color: 'white',
-  textDecoration: 'none',
-  display: 'block', 
-  textAlign: 'center', 
-};
-
-//paragraph
-const paragraphStyle = {
-  marginBottom: '0.5rem', 
-  color: 'white',
-  fontSize: '0.875rem', 
-  textAlign: 'center', 
-};
-
 const Footer = () => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  //footer
+  const footerStyle = {
+    background: 'linear-gradient(to right, #ff5722, #ffd700)',
+    color: 'white',
+    padding: '1rem 0', 
+    marginTop: '-0.9rem', 
+    zIndex: 1,
+    borderBottom: '2px solid #ffeb3b' 
+  };
+
+  //heading
+  const headingStyle = {
+    color: 'white',
+    fontSize: '1.25rem', 
+    textAlign: 'center', 
+  };
+  
+  //heading1
+  const headingStyle1 = {
+    color: 'white',
+    fontSize: '1rem', 
+    textAlign: 'center', 
+  };
+  
+  //link
+  const linkStyle = {
+    color: 'white',
+    textDecoration: 'none',
+    display: 'block', 
+    textAlign: 'center', 
+  };
+  
+  //paragraph
+  const paragraphStyle = {
+    marginBottom: '0.5rem', 
+    color: 'white',
+    fontSize: '0.875rem', 
+    textAlign: 'center', 
+  };
+
+  //maplocation
+  const mapLocation = {
+    marginTop: '1rem',
+    marginBottom: '1rem',
+    transform: isHovered ? 'scale(1.1)' : 'scale(1.05)',
+    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+  };
+  
   return (
     <footer style={footerStyle}>
       <Container>
@@ -47,6 +60,16 @@ const Footer = () => {
             <h5 style={headingStyle}>Contact Information</h5>
             <p style={paragraphStyle}>📍 34/7, Str. So 1A, Long Thanh My Ward, Dist Thu Duc, Ho Chi Minh City</p>
             <p style={paragraphStyle}>📧 Email: vunghia467@gmail.com</p>
+            <div id="address" style={mapLocation} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+            <Container>
+              <Row>
+                <Col className="map-container">
+                  <iframe title="Google Map" width="100%" height="250" src="https://maps.google.com/maps?q=34/7%2C%20đường.%20Số%201A%2C%20P.%20Long%20Thạnh%20Mỹ%2C%20Q.%20Thủ%20Đức%2C%20TP.HCM&t=&z=15&ie=UTF8&iwloc=&output=embed" allowFullScreen
+                  ></iframe>
+                </Col>
+              </Row>
+            </Container>
+          </div>
           </Col>
           <Col xs={12} md={6}>
             <h6 style={headingStyle1}>Useful Links</h6>

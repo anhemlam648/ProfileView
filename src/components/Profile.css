@@ -10,6 +10,7 @@ html {
   flex-direction: column;
   background: linear-gradient(to right, #ff5722, #ffd700);
   z-index: 1;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 /* Transition */

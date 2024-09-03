@@ -9,7 +9,6 @@
   import profileImage from "../assets/img/computer.jpg"; 
   import SpotifyPlayer from '../components/SpotifyPlayer'; 
   import { useNavigate } from "react-router-dom";
-  
   const Profile = () => {
   const navigate = useNavigate();
   const handleClick = () => {
@@ -63,9 +62,18 @@
           }
         }
       }, []);
+      // const [darkMode, setDarkMode] = useState(false);
+      // const handleToggleDarkMode = () => {
+      //   setDarkMode(!darkMode);
+      // };
+    
     return (
+    // <div className={darkMode ? "dark-mode" : "light-mode"}>
       <div id="IntroductionProfile" className="profile">
-        <NavBar />
+        <NavBar/>
+        {/* <Button id="themesbutton" variant={darkMode ? "dark" : "light"} onClick={handleToggleDarkMode} style={{ marginLeft: '1rem' }}>
+           <i className={`fas ${darkMode ? "fa-moon" : "fa-sun"}`}></i> {darkMode ? "Dark Mode" : "Light Mode"}
+         </Button> */}
         <Container className="profile-content">
           <Row>
             <Col className="profile-intro">
