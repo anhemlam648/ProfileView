@@ -18,8 +18,8 @@ const Show_CV = () => {
   //style-images
   const style_images = {
     marginTop: '4rem', 
-    width: '90%', 
-    maxWidth: '450px', 
+    width: '100%', 
+    maxWidth: '430px', 
     padding: '0.5rem', 
     backgroundColor: '#EEEEEE',
     borderRadius: '0.5rem', 
