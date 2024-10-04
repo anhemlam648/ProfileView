@@ -9,6 +9,8 @@
   import profileImage from "../assets/img/computer.jpg"; 
   import SpotifyPlayer from '../components/SpotifyPlayer'; 
   import { useNavigate } from "react-router-dom";
+  import { ThemContext } from "./context/ThemProvider";
+  import { useContext } from "react";
   const Profile = () => {
   const navigate = useNavigate();
   const handleClick = () => {
@@ -66,10 +68,13 @@
       // const handleToggleDarkMode = () => {
       //   setDarkMode(!darkMode);
       // };
-    
+    const { theme } = useContext(ThemContext); //add Themcontext from ThemProvider
     return (
     // <div className={darkMode ? "dark-mode" : "light-mode"}>
-      <div id="IntroductionProfile" className="profile">
+
+      // <div id="IntroductionProfile" className="profile">
+
+     <div id="IntroductionProfile" className={`profile ${theme}`}>
         <NavBar/>
         {/* <Button id="themesbutton" variant={darkMode ? "dark" : "light"} onClick={handleToggleDarkMode} style={{ marginLeft: '1rem' }}>
            <i className={`fas ${darkMode ? "fa-moon" : "fa-sun"}`}></i> {darkMode ? "Dark Mode" : "Light Mode"}

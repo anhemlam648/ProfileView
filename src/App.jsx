@@ -4,10 +4,14 @@ import { BrowserRouter as Router, Routes, Route  } from 'react-router-dom';
 import Profile from './components/Profile';
 import Contact from './components/Contact';
 import Showcv from './components/Showcv';
+import { useContext } from 'react';
+import { ThemContext } from './components/context/ThemProvider'; 
 function App() {
+  const { theme } = useContext(ThemContext); //add Themcontext from ThemProvider
   return (
+    
     <Router>
-      <div className="App">
+      <div className={`${theme}_app`}>
         <Routes>
         <Route path="/" element={<Profile />} />
           <Route path="/contact" element={<Contact />} />

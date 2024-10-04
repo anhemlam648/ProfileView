@@ -4,7 +4,15 @@ html {
 }
 
 /* Profile */
-.profile {
+/* .profile.light {
+  margin-top: 5rem; 
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to right, #ff5722, #ffd700);
+  z-index: 1;
+  transition: background-color 0.3s, color 0.3s;
+} */
+.profile.light {
   margin-top: 5rem; 
   display: flex;
   flex-direction: column;
@@ -13,6 +21,15 @@ html {
   transition: background-color 0.3s, color 0.3s;
 }
 
+.profile.dark {
+  margin-top: 5rem; 
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  transition: background-color 0.3s, color 0.3s;
+  background-color: #333333; 
+  color: #ffffff; 
+}
 /* Transition */
 @keyframes typing {
   from {
@@ -334,3 +351,4 @@ html {
     transform: translateY(400vh); 
   }
 }
+

@@ -1,17 +1,28 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Container, Row, Col } from "react-bootstrap";
-
+import { ThemContext } from './context/ThemProvider';
 const Footer = () => {
   const [isHovered, setIsHovered] = useState(false);
 
+  const { theme } = useContext(ThemContext); //add Themcontext from ThemProvider
   //footer
   const footerStyle = {
-    background: 'linear-gradient(to right, #ff5722, #ffd700)',
-    color: 'white',
-    padding: '1rem 0', 
-    marginTop: '-0.9rem', 
-    zIndex: 1,
-    borderBottom: '2px solid #ffeb3b' 
+    dark:{
+      background: '#333',
+      color: 'white',
+      padding: '1rem 0', 
+      marginTop: '-0.9rem', 
+      zIndex: 1,
+      borderBottom: '2px solid #ffeb3b' 
+    },
+    light:{
+      background: 'linear-gradient(to right, #ff5722, #ffd700)',
+      color: 'white',
+      padding: '1rem 0', 
+      marginTop: '-0.9rem', 
+      zIndex: 1,
+      borderBottom: '2px solid #ffeb3b' 
+    }
   };
 
   //heading
@@ -53,7 +64,9 @@ const Footer = () => {
   };
   
   return (
-    <footer style={footerStyle}>
+    // <footer style={footerStyle} >
+
+      <footer style={footerStyle[theme]} className= {`footer ${theme}`} >
       <Container>
         <Row>
           <Col xs={12} md={6}>
