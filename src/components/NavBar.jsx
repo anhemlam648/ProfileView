@@ -138,7 +138,7 @@
               </Nav>
               <Nav>
               <Nav.Link onClick={toggleTheme} style={ToggleThemes}>
-              <img src={theme === "dark" ? icon_sun : icon_moon} alt="ToggleTheme" style={{ height: '1.5rem', width: 'auto', marginLeft: '0.5rem' }} />
+              <img src={theme === "light" ? icon_moon : icon_sun} alt="ToggleTheme" style={{ height: '1.5rem', width: 'auto', marginLeft: '0.5rem' }} />
             </Nav.Link>
               </Nav>
             </Navbar.Collapse>

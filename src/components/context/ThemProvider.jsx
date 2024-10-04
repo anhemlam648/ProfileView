@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 export const ThemContext = createContext(null);
 
 const ThemContextProvider = (props) => {
-    const [theme, setTheme] = useState("dark"); 
+    const [theme, setTheme] = useState("light"); 
 
     const contextValue = {
         theme,
