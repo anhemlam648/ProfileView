@@ -107,11 +107,11 @@ const Footer = () => {
               </li>
               <li style={{ marginBottom: '0.5rem' }}>
                 <a
-                  href="https://www.pinterest.com/vunghia467"
+                  href="https://www.linkedin.com/in/vũ-nghĩa-9277bb350/"
                   style={linkStyle}
                   onMouseOver={(e) => e.target.style.textDecoration = 'underline'}
                   onMouseOut={(e) => e.target.style.textDecoration = 'none'}>
-                  Pinterest
+                  LinkedIn
                 </a>
               </li>
               <li style={{ marginBottom: '0.5rem' }}>
@@ -120,7 +120,7 @@ const Footer = () => {
                   style={linkStyle}
                   onMouseOver={(e) => e.target.style.textDecoration = 'underline'}
                   onMouseOut={(e) => e.target.style.textDecoration = 'none'}>
-                  Contact
+                  Instagram
                 </a>
               </li>
             </ul>

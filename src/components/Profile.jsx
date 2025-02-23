@@ -2,11 +2,14 @@
   import { Container, Row, Col } from "react-bootstrap";
   import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
   import { faCode, faPalette, faUser } from '@fortawesome/free-solid-svg-icons';
-  import { faFacebook, faGithub, faPinterest, faInstagram } from '@fortawesome/free-brands-svg-icons';
+  import { faFacebook, faGithub, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
   import NavBar from "./NavBar";
   import Footer from "./Footer";
+  import Copied from "../assets/img/Copied.png";
   import "./Profile.css";
-  import profileImage from "../assets/img/computer.jpg"; 
+  //import profileImage from "../assets/img/computer.jpg";
+  import Pixel from "../assets/img/Pixel.jpg";
+  import Image from "../assets/img/Image.jpg";
   import SpotifyPlayer from '../components/SpotifyPlayer'; 
   import { useNavigate } from "react-router-dom";
   import { ThemContext } from "./context/ThemProvider";
@@ -19,20 +22,35 @@
   const handleShowCV = () => {
           navigate('/show');
   };
+  const handlecopied = (year,description,location) => {
+    year = document.getElementById('yearold').innerText;
+    description = document.getElementById('desciption').innerText;
+    location = document.getElementById('location').innerText;
+    const Copyright = `Year: ${year}\nDesciption:${description}\nLocation:${location}`;
+    navigator.clipboard.writeText(Copyright).then(()=> {
+        alert('copy right');
+    })
+  };
+
+  
   const [dynamicText, setdynamicText] = useState({
           description: "A passionate individual with a keen interest in Web Developer.",
-          location: "In Ho Chi Minh, VietNam"
+          location: "In Ho Chi Minh, VietNam",
+          Image: Image
       });
     useEffect(() => {
         const timer = setInterval(() => {
           setdynamicText((prevText)=> {
             if(prevText.description === "A passionate individual with a keen interest in Web Developer.") {
               return{
+                 Image: Pixel,
                   description: "Driven by a relentless pursuit of excellence in Web Development.",
                   location: "In Ho Chi Minh, District 9, VietNam"
+                 
               };
             } else {
               return {
+                Image: Image,
                 description: "A passionate individual with a keen interest in Web Developer.",
                 location: "In Ho Chi Minh, VietNam"
               };
@@ -83,14 +101,16 @@
           <Row>
             <Col className="profile-intro">
             <img className="profile-image"
-                  src={profileImage}
+                 //src={profileImage}
+                  src={dynamicText.Image}
                   alt="Profile Image"
                   />
               <h1 className="typing-container"><span className="typing-text1"></span></h1>
               <h1 className="typing-container1"><span className="typing-text2"></span></h1>
-              <p>22 years old</p>
-              <p>{dynamicText.description}</p>
-              <p>{dynamicText.location}</p>
+              <p id="yearold">22 years old</p>
+              <p id="desciption">{dynamicText.description}</p>
+              <p id="location">{dynamicText.location}</p>
+              <p className="buttonIconCopied"onClick={ handlecopied } style={{width:"3%",margin:'auto'}}><img src={Copied}></img> </p>
               <div className="skill-icons">
                 <div className="skill-icon">
                   <FontAwesomeIcon icon={faCode} size="3x" />
@@ -116,8 +136,8 @@
                 <a href="https://github.com/anhemlam648" aria-label="GitHub">
                   <FontAwesomeIcon icon={faGithub} />
                 </a>
-                <a href="https://www.pinterest.com/vunghia467/" aria-label="Pinterest">
-                  <FontAwesomeIcon icon={faPinterest} />
+                <a href="https://www.linkedin.com/in/vũ-nghĩa-9277bb350/" aria-label="Linkedin">
+                  <FontAwesomeIcon icon={faLinkedin} />
                 </a>
                 <a href="#" aria-label="Instagram">
                   <FontAwesomeIcon icon={faInstagram} />

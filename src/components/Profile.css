@@ -20,7 +20,6 @@ html {
   z-index: 1;
   transition: background-color 0.3s, color 0.3s;
 }
-
 .profile.dark {
   margin-top: 5rem; 
   display: flex;
@@ -99,7 +98,7 @@ html {
 /* typing text 2 */
 .typing-text2::before {
   font-size: 1.5rem;  
-  content: "I'm a Web Developer";
+  content: "I'm a Software Engineer";
   color: #00FFFF;
   animation: words 20s infinite;
 }
@@ -351,4 +350,11 @@ html {
     transform: translateY(400vh); 
   }
 }
+/*buttonIconCopied*/
 
+/* .profile-content.buttonIconCopied{
+  width: 50%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+} */
