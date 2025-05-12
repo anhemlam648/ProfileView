@@ -1,4 +1,4 @@
-import cvImage from "../assets/img/CV_Vũ_Trung_Nghĩa.jpg"; 
+import cvImage from "../assets/img/CV_Vu_Trung_Nghia_Software.png"; 
 import NavBar from "../components/NavBar";
 import { useContext } from "react";
 import { ThemContext } from "./context/ThemProvider";
