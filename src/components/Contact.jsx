@@ -1,4 +1,5 @@
 import { Container, Row, Col } from 'react-bootstrap';
+import { useTranslation } from 'react-i18next';
 import NavBar from './NavBar';
 import Image from "../assets/img/floating-cyberpunk.jpg";
 
@@ -69,6 +70,7 @@ const imageStyle = {
 
 
 const Contact = () => {
+  const { t } = useTranslation();
   return (
     <div style={contactPageStyle} className="contact-page">
       <NavBar />
@@ -80,11 +82,11 @@ const Contact = () => {
               style={imageStyle}
               alt="Profile Image"
             />
-            <h1 style={contactFooterStyle}>💻 Contact Me</h1>
+            <h1 style={contactFooterStyle}>{t('contact.title')}</h1>
             <div style={contactInfoStyle}>
-              <p style={contactInfoParagraphStyle}><strong>Email:</strong> vunghia467@gmail.com</p>
+              <p style={contactInfoParagraphStyle}><strong>{t('contact.email')}:</strong> vunghia467@gmail.com</p>
               <p style={contactInfoParagraphStyle1}>
-                <strong>Facebook:</strong> 
+                <strong>{t('contact.facebook')}:</strong> 
                 <a 
                   href="https://www.facebook.com/vu.nghia.18062" 
                   target="_blank" 

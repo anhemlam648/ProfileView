@@ -1,0 +1,57 @@
+{
+  "nav": {
+    "home": "Trang chủ",
+    "introductionMe": "Giới thiệu",
+    "aboutMe": "Về tôi",
+    "spotifyPlaying": "Spotify",
+    "contact": "Liên hệ"
+  },
+  "profile": {
+    "typing-text1": "Xin chào 👋, tôi là Vũ Trung Nghĩa",
+    "typing-text2": "Tôi là một kỹ sư phần mềm",
+    "yearsOld": "22 tuổi",
+    "description1": "Đam mê phát triển web và luôn học hỏi không ngừng.",
+    "description2": "Hướng tới sự xuất sắc trong lĩnh vực Phát triển Web.",
+    "location1": "Tại TP. Hồ Chí Minh, Việt Nam",
+    "location2": "Tại TP. Hồ Chí Minh, Quận 9, Việt Nam",
+    "webDeveloper": "Lập trình Web",
+    "uiDesigner": "Thiết kế UI",
+    "uxDesigner": "Thiết kế UX",
+    "exploreMyCv": "Xem CV của tôi",
+    "hobbies": "📚 Tôi thích đọc sách, nghe nhạc, du lịch và khám phá ẩm thực.",
+    "quote": "Không bao giờ là quá muộn để trở thành con người bạn có thể trở thành.",
+    "quoteAuthor": "-George Eliot-",
+    "aboutMe": "Về tôi",
+    "welcome": "Chào mừng",
+    "education": "Học vấn",
+    "educationDesc": "Đại học Công nghệ - HUTECH",
+    "figma": "Figma",
+    "figmaDesc": "Thiết kế giao diện bằng Figma. Chuyển Figma sang HTML/CSS.",
+    "networking": "Mạng xã hội",
+    "networkingDesc": "Xây dựng nền tảng trên Facebook kết nối mọi người",
+    "musicGames": "Âm nhạc & Game",
+    "musicGamesDesc": "Nghe nhạc EDM và chơi game trong thời gian rảnh.",
+    "workTogether": "Hợp tác cùng nhau?",
+    "contactMe": "Liên hệ tôi »",
+    "copyRightAlert": "Đã sao chép",
+    "copyYearLabel": "Tuổi",
+    "copyDescriptionLabel": "Mô tả",
+    "copyLocationLabel": "Địa điểm"
+  },
+  "contact": {
+    "title": "💻 Liên hệ với tôi",
+    "email": "Email",
+    "facebook": "Facebook"
+  },
+  "footer": {
+    "contactInfo": "Thông tin liên hệ",
+    "address": "📍 34/7, Đường Số 1A, P. Long Thạnh Mỹ, Q. Thủ Đức, TP.HCM",
+    "email": "📧 Email: vunghia467@gmail.com",
+    "usefulLinks": "Liên kết hữu ích",
+    "copyright": "© 2024 Bởi Vũ Trung Nghĩa."
+  },
+  "language": {
+    "en": "English",
+    "vi": "Tiếng Việt"
+  }
+}

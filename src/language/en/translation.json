@@ -1,0 +1,57 @@
+{
+  "nav": {
+    "home": "Home",
+    "introductionMe": "Introduction-Me",
+    "aboutMe": "About-Me",
+    "spotifyPlaying": "Spotify-Playing",
+    "contact": "Contact"
+  },
+  "profile": {
+    "typing-text1": "Hi 👋, I'm Vu Trung Nghia",
+    "typing-text2": "I'm a Software Engineer",
+    "yearsOld": "22 years old",
+    "description1": "A passionate individual with a keen interest in Web Developer.",
+    "description2": "Driven by a relentless pursuit of excellence in Web Development.",
+    "location1": "In Ho Chi Minh, VietNam",
+    "location2": "In Ho Chi Minh, District 9, VietNam",
+    "webDeveloper": "Web Developer",
+    "uiDesigner": "UI Designer",
+    "uxDesigner": "UX Designer",
+    "exploreMyCv": "Explore My CV",
+    "hobbies": "📚 I enjoy reading books, listening to music, traveling, and exploring new cuisines.",
+    "quote": "It is never too late to be what you might have been.",
+    "quoteAuthor": "-George Eliot-",
+    "aboutMe": "About me",
+    "welcome": "Welcome",
+    "education": "Education",
+    "educationDesc": "University of Technology - HUTECH",
+    "figma": "Figma",
+    "figmaDesc": "Interface design using Figma. Convert Figma to HTML/CSS.",
+    "networking": "Networking",
+    "networkingDesc": "Created a platform on FaceBook connect with everyone",
+    "musicGames": "Music & Games",
+    "musicGamesDesc": "Listen to EDM music and play game in my free time.",
+    "workTogether": "Work Together?",
+    "contactMe": "Contact me »",
+    "copyRightAlert": "Copy right",
+    "copyYearLabel": "Year",
+    "copyDescriptionLabel": "Description",
+    "copyLocationLabel": "Location"
+  },
+  "contact": {
+    "title": "💻 Contact Me",
+    "email": "Email",
+    "facebook": "Facebook"
+  },
+  "footer": {
+    "contactInfo": "Contact Information",
+    "address": "📍 34/7, Str. So 1A, Long Thanh My Ward, Dist Thu Duc, Ho Chi Minh City",
+    "email": "📧 Email: vunghia467@gmail.com",
+    "usefulLinks": "Useful Links",
+    "copyright": "© 2024 By Vu Trung Nghia."
+  },
+  "language": {
+    "en": "English",
+    "vi": "Tiếng Việt"
+  }
+}

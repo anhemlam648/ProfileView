@@ -1,62 +1,55 @@
-// // src/components/LanguageSwitcher.js
-// import React from 'react';
-// import { useTranslation } from 'react-i18next';
+import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
-// const buttonStyle = {
-//   margin: '0 0.5rem',
-//   padding: '0.5rem 1rem',
-//   fontSize: '1rem',
-//   cursor: 'pointer',
-//   border: '2px solid #333',
-//   borderRadius: '4px',
-//   backgroundColor: '#f0f0f0',
-//   color: '#333',
-//   transition: 'background-color 0.3s, color 0.3s'
-// };
+const buttonStyle = {
+  margin: '0 0.25rem',
+  padding: '0.35rem 0.6rem',
+  fontSize: '0.85rem',
+  cursor: 'pointer',
+  border: '2px solid rgba(255,255,255,0.8)',
+  borderRadius: '4px',
+  backgroundColor: 'transparent',
+  color: 'white',
+  transition: 'background-color 0.3s, color 0.3s'
+};
 
-// const buttonHoverStyle = {
-//   ...buttonStyle,
-//   backgroundColor: '#333',
-//   color: '#f0f0f0'
-// };
+const buttonActiveStyle = {
+  ...buttonStyle,
+  backgroundColor: 'rgba(255,255,255,0.3)',
+  color: 'white'
+};
 
-// const LanguageSwitcher = () => {
-//   const { i18n } = useTranslation();
-//   const [hoveredLanguage, setHoveredLanguage] = React.useState(null);
+const LanguageSwitcher = () => {
+  const { i18n } = useTranslation();
+  const [hoveredLanguage, setHoveredLanguage] = useState(null);
 
-//   const changeLanguage = (lng) => {
-//     i18n.changeLanguage(lng);
-//     localStorage.setItem('i18nextLng', lng); // Lưu ngôn ngữ đã chọn vào localStorage
-//   };
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+    localStorage.setItem('i18nextLng', lng);
+  };
 
-//   React.useEffect(() => {
-//     // Đặt ngôn ngữ từ localStorage khi component được mount
-//     const savedLanguage = localStorage.getItem('i18nextLng');
-//     if (savedLanguage) {
-//       i18n.changeLanguage(savedLanguage);
-//     }
-//   }, [i18n]);
+  return (
+    <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
+      <button
+        type="button"
+        style={hoveredLanguage === 'en' || i18n.language === 'en' ? buttonActiveStyle : buttonStyle}
+        onClick={() => changeLanguage('en')}
+        onMouseEnter={() => setHoveredLanguage('en')}
+        onMouseLeave={() => setHoveredLanguage(null)}
+      >
+        EN
+      </button>
+      <button
+        type="button"
+        style={hoveredLanguage === 'vi' || i18n.language === 'vi' ? buttonActiveStyle : buttonStyle}
+        onClick={() => changeLanguage('vi')}
+        onMouseEnter={() => setHoveredLanguage('vi')}
+        onMouseLeave={() => setHoveredLanguage(null)}
+      >
+        VI
+      </button>
+    </div>
+  );
+};
 
-//   return (
-//     <div style={{ display: 'flex', justifyContent: 'center', margin: '1rem 0' }}>
-//       <button
-//         style={hoveredLanguage === 'en' ? buttonHoverStyle : buttonStyle}
-//         onClick={() => changeLanguage('en')}
-//         onMouseEnter={() => setHoveredLanguage('en')}
-//         onMouseLeave={() => setHoveredLanguage(null)}
-//       >
-//         English
-//       </button>
-//       <button
-//         style={hoveredLanguage === 'vi' ? buttonHoverStyle : buttonStyle}
-//         onClick={() => changeLanguage('vi')}
-//         onMouseEnter={() => setHoveredLanguage('vi')}
-//         onMouseLeave={() => setHoveredLanguage(null)}
-//       >
-//         Vietnamese
-//       </button>
-//     </div>
-//   );
-// };
-
-// export default LanguageSwitcher;
+export default LanguageSwitcher;

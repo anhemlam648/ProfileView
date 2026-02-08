@@ -1,10 +1,11 @@
 import { useContext, useState } from 'react';
 import { Container, Row, Col } from "react-bootstrap";
+import { useTranslation } from 'react-i18next';
 import { ThemContext } from './context/ThemProvider';
 const Footer = () => {
   const [isHovered, setIsHovered] = useState(false);
-
-  const { theme } = useContext(ThemContext); //add Themcontext from ThemProvider
+  const { t } = useTranslation();
+  const { theme } = useContext(ThemContext);
   //footer
   const footerStyle = {
     dark:{
@@ -70,9 +71,9 @@ const Footer = () => {
       <Container>
         <Row>
           <Col xs={12} md={6}>
-            <h5 style={headingStyle}>Contact Information</h5>
-            <p style={paragraphStyle}>📍 34/7, Str. So 1A, Long Thanh My Ward, Dist Thu Duc, Ho Chi Minh City</p>
-            <p style={paragraphStyle}>📧 Email: vunghia467@gmail.com</p>
+            <h5 style={headingStyle}>{t('footer.contactInfo')}</h5>
+            <p style={paragraphStyle}>{t('footer.address')}</p>
+            <p style={paragraphStyle}>{t('footer.email')}</p>
             <div id="address" style={mapLocation} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
             <Container>
               <Row>
@@ -85,7 +86,7 @@ const Footer = () => {
           </div>
           </Col>
           <Col xs={12} md={6}>
-            <h6 style={headingStyle1}>Useful Links</h6>
+            <h6 style={headingStyle1}>{t('footer.usefulLinks')}</h6>
             <ul style={{ listStyle: 'none', padding: '0' }}>
               <li style={{ marginBottom: '0.5rem' }}>
                 <a
@@ -128,7 +129,7 @@ const Footer = () => {
         </Row>
         <Row>
           <Col>
-            <p style={paragraphStyle}>© 2024 By Vu Trung Nghia.</p>
+            <p style={paragraphStyle}>{t('footer.copyright')}</p>
           </Col>
         </Row>
       </Container>

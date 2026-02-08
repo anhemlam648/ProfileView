@@ -3,6 +3,7 @@
   import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
   import { faCode, faPalette, faUser } from '@fortawesome/free-solid-svg-icons';
   import { faFacebook, faGithub, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+  import { useTranslation } from 'react-i18next';
   import NavBar from "./NavBar";
   import Footer from "./Footer";
   import Copied from "../assets/img/Copied.png";
@@ -16,77 +17,58 @@
   import { useContext } from "react";
   const Profile = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const handleClick = () => {
           navigate('/contact');
         };
   const handleShowCV = () => {
           navigate('/show');
   };
-  const handlecopied = (year,description,location) => {
-    year = document.getElementById('yearold').innerText;
-    description = document.getElementById('desciption').innerText;
-    location = document.getElementById('location').innerText;
-    const Copyright = `Year: ${year}\nDesciption:${description}\nLocation:${location}`;
-    navigator.clipboard.writeText(Copyright).then(()=> {
-        alert('copy right');
-    })
+  const handlecopied = () => {
+    const yearEl = document.getElementById('yearold');
+    const descEl = document.getElementById('desciption');
+    const locationEl = document.getElementById('location');
+    if (!yearEl || !descEl || !locationEl) return;
+    const copyright = `${t('profile.copyYearLabel')}: ${yearEl.innerText}\n${t('profile.copyDescriptionLabel')}: ${descEl.innerText}\n${t('profile.copyLocationLabel')}: ${locationEl.innerText}`;
+    navigator.clipboard.writeText(copyright).then(() => {
+      alert(t('profile.copyRightAlert'));
+    }).catch(() => {});
   };
 
-  
-  const [dynamicText, setdynamicText] = useState({
-          description: "A passionate individual with a keen interest in Web Developer.",
-          location: "In Ho Chi Minh, VietNam",
-          Image: Image
-      });
+  const [imageVariant, setImageVariant] = useState(1);
+  const [dynamicImage, setDynamicImage] = useState(Image);
     useEffect(() => {
         const timer = setInterval(() => {
-          setdynamicText((prevText)=> {
-            if(prevText.description === "A passionate individual with a keen interest in Web Developer.") {
-              return{
-                 Image: Pixel,
-                  description: "Driven by a relentless pursuit of excellence in Web Development.",
-                  location: "In Ho Chi Minh, District 9, VietNam"
-                 
-              };
-            } else {
-              return {
-                Image: Image,
-                description: "A passionate individual with a keen interest in Web Developer.",
-                location: "In Ho Chi Minh, VietNam"
-              };
-            }
-          });
+          setImageVariant((v) => (v === 1 ? 2 : 1));
+          setDynamicImage((img) => (img === Image ? Pixel : Image));
         }, 6000);
-          return () => clearInterval(timer);
+        return () => clearInterval(timer);
       }, []);
       useEffect(() => {
         const profileElement = document.getElementById('IntroductionProfile');
     
-        if (profileElement) {
-          // create snow
-          const snowfallDiv = document.createElement('div');
-          snowfallDiv.className = 'snowfall';
-          profileElement.appendChild(snowfallDiv);
-    
-          // create location snow
-          for (let i = 0; i < 80; i++) {
-            const snowflake = document.createElement('div');
-            snowflake.className = 'snowflake';
-            
-            // random snow
-            snowflake.style.left = `${Math.random() * 100}%`;
-            snowflake.style.right = `${Math.random() * 100}%`;
-            snowflake.style.animationDuration = `${Math.random() * 10 + 5}s`;
-            snowflake.style.opacity = `${Math.random() * 1 + 1}`;
-            snowfallDiv.appendChild(snowflake);
-          }
+        if (!profileElement) return;
+        const snowfallDiv = document.createElement('div');
+        snowfallDiv.className = 'snowfall';
+        profileElement.appendChild(snowfallDiv);
+        for (let i = 0; i < 80; i++) {
+          const snowflake = document.createElement('div');
+          snowflake.className = 'snowflake';
+          snowflake.style.left = `${Math.random() * 100}%`;
+          snowflake.style.right = `${Math.random() * 100}%`;
+          snowflake.style.animationDuration = `${Math.random() * 10 + 5}s`;
+          snowflake.style.opacity = `${Math.random() * 1 + 1}`;
+          snowfallDiv.appendChild(snowflake);
         }
+        return () => {
+          if (snowfallDiv.parentNode) snowfallDiv.parentNode.removeChild(snowfallDiv);
+        };
       }, []);
       // const [darkMode, setDarkMode] = useState(false);
       // const handleToggleDarkMode = () => {
       //   setDarkMode(!darkMode);
       // };
-    const { theme } = useContext(ThemContext); //add Themcontext from ThemProvider
+    const { theme } = useContext(ThemContext);
     return (
     // <div className={darkMode ? "dark-mode" : "light-mode"}>
 
@@ -102,32 +84,36 @@
             <Col className="profile-intro">
             <img className="profile-image"
                  //src={profileImage}
-                  src={dynamicText.Image}
+                  src={dynamicImage}
                   alt="Profile Image"
                   />
-              <h1 className="typing-container"><span className="typing-text1"></span></h1>
-              <h1 className="typing-container1"><span className="typing-text2"></span></h1>
-              <p id="yearold">22 years old</p>
-              <p id="desciption">{dynamicText.description}</p>
-              <p id="location">{dynamicText.location}</p>
-              <p className="buttonIconCopied"onClick={ handlecopied } style={{width:"3%",margin:'auto'}}><img src={Copied}></img> </p>
+              {/* <h1 className="typing-container"><span className="typing-text1" /></h1>
+              <h1 className="typing-container1"><span className="typing-text2" /></h1> */}
+              <h1 id="typingtext1">{t('profile.typing-text1')}</h1>
+              <h1 id="typingtext2">{t('profile.typing-text2')}</h1>
+              <p id="yearold">{t('profile.yearsOld')}</p>
+              <p id="desciption">{t(`profile.description${imageVariant}`)}</p>
+              <p id="location">{t(`profile.location${imageVariant}`)}</p>
+              <p className="buttonIconCopied" onClick={handlecopied} style={{ width: '3%', margin: 'auto' }} role="button" tabIndex={0} onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && (e.preventDefault(), handlecopied())}>
+                <img src={Copied} alt="Copy" />
+              </p>
               <div className="skill-icons">
                 <div className="skill-icon">
                   <FontAwesomeIcon icon={faCode} size="3x" />
-                  <p>Web Developer</p>
+                  <p>{t('profile.webDeveloper')}</p>
                 </div>
                 <div className="skill-icon">
                   <FontAwesomeIcon icon={faPalette} size="3x" />
-                  <p>UI Designer</p>
+                  <p>{t('profile.uiDesigner')}</p>
                 </div>
                 <div className="skill-icon">
                   <FontAwesomeIcon icon={faUser} size="3x" />
-                  <p>UX Designer</p>
+                  <p>{t('profile.uxDesigner')}</p>
                 </div>
               </div>
             </Col>
             <div className="button-cv">
-                  <button onClick={handleShowCV}> Explore My CV</button>
+                  <button onClick={handleShowCV}>{t('profile.exploreMyCv')}</button>
             </div>
               <div className="social-icons">
                 <a href="https://www.facebook.com/vu.nghia.18062" aria-label="Facebook">
@@ -149,7 +135,7 @@
           <Container>
             <Row>
               <Col className="content">
-                <p style={{marginTop:'-20px'}}>📚 I enjoy reading books, listening to music, traveling, and exploring new cuisines.</p>
+                <p style={{marginTop:'-20px'}}>{t('profile.hobbies')}</p>
                 <SpotifyPlayer /> 
               </Col>
             </Row>
@@ -160,8 +146,8 @@
           <Container>
               <Row>
               <Col className="content">
-                  <p style={{ fontSize: '50px', textAlign: "center" ,color:'#33FFFF' }}>It is never too late to be what you might have been.</p>
-                  <p style={{ fontSize: '30px', textAlign: "center" }}>-George Eliotygiai-</p>
+                  <p style={{ fontSize: '50px', textAlign: "center" ,color:'#33FFFF' }}>{t('profile.quote')}</p>
+                  <p style={{ fontSize: '30px', textAlign: "center" }}>{t('profile.quoteAuthor')}</p>
               </Col>
               </Row>
           </Container>
@@ -171,40 +157,40 @@
           <Container>
               <Row>
               <Col className="content-about">
-                  <p style={{ fontSize: '50px', textAlign: "center", color:'#FFFF00' }}>About me</p>
-                  <p style={{ fontSize: '30px', textAlign: "center" }}>Welcome</p>
+                  <p style={{ fontSize: '50px', textAlign: "center", color:'#FFFF00' }}>{t('profile.aboutMe')}</p>
+                  <p style={{ fontSize: '30px', textAlign: "center" }}>{t('profile.welcome')}</p>
               </Col>
               </Row>
               <Row>
             <Col md={6} lg={3}>
               <div className="square-box">
                 <div>
-                  <p className="education"style={{ fontSize: '40px'}}>Education</p>
-                  <p>University of Technology - HUTECH</p>
+                  <p className="education" style={{ fontSize: '40px' }}>{t('profile.education')}</p>
+                  <p>{t('profile.educationDesc')}</p>
                 </div>
               </div>
             </Col>
             <Col md={6} lg={3}>
               <div className="square-box">
                 <div>
-                  <p className="figma" style={{ fontSize: '40px' }}>Figma</p>
-                  <p>Interface design using Figma. Convert Figma to HTML/CSS.</p>
+                  <p className="figma" style={{ fontSize: '40px' }}>{t('profile.figma')}</p>
+                  <p>{t('profile.figmaDesc')}</p>
                 </div>
               </div>
             </Col>
             <Col md={6} lg={3}>
               <div className="square-box">
                 <div>
-                  <p className="network" style={{ fontSize: '40px' }}>Networking</p>
-                  <p>Created a platform on FaceBook connect with everyone</p>
+                  <p className="network" style={{ fontSize: '40px' }}>{t('profile.networking')}</p>
+                  <p>{t('profile.networkingDesc')}</p>
                 </div>
               </div>
             </Col>
             <Col md={6} lg={3}>
               <div className="square-box">
                 <div>
-                  <p className="music" style={{ fontSize: '40px' }}>Music & Games</p>
-                  <p>Listen to EDM music and play game in my free time.</p>
+                  <p className="music" style={{ fontSize: '40px' }}>{t('profile.musicGames')}</p>
+                  <p>{t('profile.musicGamesDesc')}</p>
                 </div>
               </div>
             </Col>
@@ -215,8 +201,8 @@
           <Container>
               <Row>
               <Col className="content">
-                  <p style={{ fontSize: '50px', textAlign: "center" ,color:'#66FFCC' }}>Work Together?</p>
-                    <button className="button" onClick={handleClick}>Contact me »</button>
+                  <p style={{ fontSize: '50px', textAlign: "center" ,color:'#66FFCC' }}>{t('profile.workTogether')}</p>
+                    <button className="button" onClick={handleClick}>{t('profile.contactMe')}</button>
               </Col>
               </Row>
           </Container>

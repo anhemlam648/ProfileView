@@ -1,16 +1,19 @@
     import { useState } from "react";
     import { Navbar, Nav, Container } from "react-bootstrap";
     import { useLocation } from "react-router-dom";
+    import { useTranslation } from 'react-i18next';
     import Logotechnology from "../assets/img/logo_nav.png";
     import navIcon1 from "../assets/img/facebook.png";
     import icon_sun from "../assets/img/icon_sun.png";
     import icon_moon from "../assets/img/icon-moon.png";
     import { useContext } from 'react';
     import { ThemContext } from './context/ThemProvider';
+    import LanguageSwitcher from './mainJs/LanguageSwitcher';
     const NavBar = () => {
       const [expanded, setExpanded] = useState(false);
       const location = useLocation(); 
-      const { theme, setTheme } = useContext(ThemContext); //add Themcontext from ThemProvider
+      const { theme, setTheme } = useContext(ThemContext);
+      const { t } = useTranslation();
       // const isContactPage = location.pathname === '/contact';
       // const Introduction = location.pathname === '/contact';
       // const isAboutmePage = location.pathname === '/contact';
@@ -116,14 +119,14 @@
             />
             <Navbar.Collapse id="basic-navbar-nav" style={navbarCollapseStyle}>
               <Nav className="me-auto">
-                <Nav.Link href="/" style={linkStyle}>Home</Nav.Link>
+                <Nav.Link href="/" style={linkStyle}>{t('nav.home')}</Nav.Link>
                 {/* hide with url */}
                 {!HidePages && (
                   <>
-                  <Nav.Link href="#IntroductionProfile" style={location.hash === '#IntroductionProfile' ? activeLinkStyle : linkStyle}>Introduction-Me</Nav.Link>
-                  <Nav.Link href="#AboutProfile" style={location.hash === '#AboutProfile' ? activeLinkStyle : linkStyle}>About-Me</Nav.Link>
-                  <Nav.Link href="#SpotifyPlaying" style={location.hash === '#SpotifyPlaying' ? activeLinkStyle : linkStyle}>Spotify-Playing</Nav.Link>
-                  <Nav.Link href="#contactProfile" style={location.hash === '#contactProfile' ? activeLinkStyle : linkStyle}>Contact</Nav.Link>
+                  <Nav.Link href="#IntroductionProfile" style={location.hash === '#IntroductionProfile' ? activeLinkStyle : linkStyle}>{t('nav.introductionMe')}</Nav.Link>
+                  <Nav.Link href="#AboutProfile" style={location.hash === '#AboutProfile' ? activeLinkStyle : linkStyle}>{t('nav.aboutMe')}</Nav.Link>
+                  <Nav.Link href="#SpotifyPlaying" style={location.hash === '#SpotifyPlaying' ? activeLinkStyle : linkStyle}>{t('nav.spotifyPlaying')}</Nav.Link>
+                  <Nav.Link href="#contactProfile" style={location.hash === '#contactProfile' ? activeLinkStyle : linkStyle}>{t('nav.contact')}</Nav.Link>
                 </>
                 )}
                 {/* {!Introduction && <Nav.Link href="#IntroductionProfile" style={linkStyle}>Introduction-Me</Nav.Link>}
@@ -136,10 +139,11 @@
                   <img src={navIcon1} alt="Nav Icon" style={imageStyle} />
                 </Nav.Link>
               </Nav>
-              <Nav>
-              <Nav.Link onClick={toggleTheme} style={ToggleThemes}>
-              <img src={theme === "light" ? icon_moon : icon_sun} alt="ToggleTheme" style={{ height: '1.5rem', width: 'auto', marginLeft: '0.5rem' }} />
-            </Nav.Link>
+              <Nav style={{ alignItems: 'center' }}>
+                <LanguageSwitcher />
+                <Nav.Link onClick={toggleTheme} style={ToggleThemes}>
+                  <img src={theme === "light" ? icon_moon : icon_sun} alt="ToggleTheme" style={{ height: '1.5rem', width: 'auto', marginLeft: '0.5rem' }} />
+                </Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Container>
