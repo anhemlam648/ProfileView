@@ -1,154 +1,93 @@
-    import { useState } from "react";
-    import { Navbar, Nav, Container } from "react-bootstrap";
-    import { useLocation } from "react-router-dom";
-    import { useTranslation } from 'react-i18next';
-    import Logotechnology from "../assets/img/logo_nav.png";
-    import navIcon1 from "../assets/img/facebook.png";
-    import icon_sun from "../assets/img/icon_sun.png";
-    import icon_moon from "../assets/img/icon-moon.png";
-    import { useContext } from 'react';
-    import { ThemContext } from './context/ThemProvider';
-    import LanguageSwitcher from './mainJs/LanguageSwitcher';
-    const NavBar = () => {
-      const [expanded, setExpanded] = useState(false);
-      const location = useLocation(); 
-      const { theme, setTheme } = useContext(ThemContext);
-      const { t } = useTranslation();
-      // const isContactPage = location.pathname === '/contact';
-      // const Introduction = location.pathname === '/contact';
-      // const isAboutmePage = location.pathname === '/contact';
-      // const SpotifyPlaying = location.pathname === '/contact';
-      //update hide with much url
-      const toggleTheme = () =>{
-        // if(theme === "dark"){
-        //   setTheme("light");
-        //   setIcon(icon_moon);
-        //   const nav = document.getElementById("Nav");
-        //   nav.classList.add("dark");
-        // }else{
-        //   if(theme === "light"){
-        //     setTheme("dark");
-        //     setIcon(icon_sun);
-        //     const nav = document.getElementById("Nav");
-        //     nav.classList.add("light");
-        //   }
-        // }
-        setTheme((prevTheme) => (prevTheme === "dark" ? "light" : "dark"));
-      };
-      const hashToHideLinks = ['/show','/contact'];
-      const HidePages = hashToHideLinks.includes(location.pathname)
-      
+import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import Logotechnology from '../assets/img/logo_nav.png';
+import navIcon1 from '../assets/img/facebook.png';
+import icon_sun from '../assets/img/icon_sun.png';
+import icon_moon from '../assets/img/icon-moon.png';
+import { useContext } from 'react';
+import { ThemContext } from './context/ThemProvider';
+import LanguageSwitcher from './mainJs/LanguageSwitcher';
 
-      //brand
-      const brandStyle = {
-        height: '3.5rem',
-      };
+const NavBar = () => {
+  const [expanded, setExpanded] = useState(false);
+  const location = useLocation();
+  const { theme, setTheme } = useContext(ThemContext);
+  const { t } = useTranslation();
 
-      //link
-      const linkStyle = {
-        color: 'white',
-        textDecoration: 'none',
-        padding: '0.6rem', 
-        fontSize: '0.9rem',
-        height: '1.5rem',
-        width: 'auto',
-        marginLeft:'0.5rem'
-      };
+  const navButtonClass = theme === 'dark'
+  ? 'border-slate-700 bg-slate-900 text-white hover:bg-slate-800'
+  : 'border-slate-200 bg-white text-black hover:bg-slate-100'
 
-      //activel
-      const activeLinkStyle = {
-        color: '#00FFFF',
-        borderBottom: '3px solid #00FFFF',
-        
-      };
+  const navSocialClass = theme === 'dark'
+    ? 'inline-flex h-11 w-11 items-center justify-center rounded-full border p-2 transition border-blue-900 bg-blue-900'
+    : 'inline-flex h-11 w-11 items-center justify-center rounded-full border p-2 transition border-blue-700 bg-blue-700';
 
-      //images
-      const imageStyle = {
-        height: '1.5rem',
-        width: 'auto',
-        marginLeft:'0.8rem',
-        marginTop: '0.5rem'
-      };
+  const navLinkClass = (isActive) =>
+    theme === 'dark'
+      ? `rounded-full px-4 py-2 text-sm font-medium transition ${isActive ? 'bg-slate-800 text-white' : 'text-slate-100 hover:bg-slate-800'}`
+      : `rounded-full px-4 py-2 text-sm font-medium transition ${isActive ? 'bg-zinc-100 text-black' : 'text-black hover:bg-zinc-100'}`;
 
-      //toggleThemes
-      const ToggleThemes ={
-        height: '1.5rem',
-        width: 'auto',
-        marginLeft:'0.4rem',
-        marginTop: '-0.3rem'
-      }
-      
-      // const linkHoverStyle = {
-      //   opacity: '0.8',
-      // };
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === 'dark' ? 'light' : 'dark'));
+  };
 
-      //navbar
-      const navbarStyle = {
-        padding: '0.8rem 0',
-        maxWidth: '100vw',
-        margin: '0 auto',
-        overflowX: 'hidden',
-        background: theme === "dark" ? '#333' : 'linear-gradient(to right, #ff5722, #ffd700)',
-        borderBottom: '2px solid #ffeb3b',
-      };
+  const hidePages = ['/show', '/contact'].includes(location.pathname);
 
-      //toggle
-      const toggleIconStyle = {
-        marginLeft:'-1rem',
-        marginRight:'1rem',
-        backgroundImage: "url('data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255,255,255,.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e')",
-      };
+  return (
+    <header className={`fixed inset-x-0 top-0 z-50 border-b transition-colors duration-500 ${theme === 'dark' ? 'border-slate-800 bg-slate-950/90 text-slate-100' : 'border-zinc-100 bg-white text-black shadow-sm'}`}>
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
+        <a href="/" className="flex items-center gap-3">
+          <img src={Logotechnology} alt="Logo" className="h-12 w-auto rounded-2xl object-contain" />
+          <span className="text-lg font-semibold tracking-tight">Vu Nghia</span>
+        </a>
 
-      //navbar collap
-      const navbarCollapseStyle = {
-        padding: '0',
-        marginLeft:'0.5rem'
-      };
-      return (
-        // <Navbar expanded={expanded} expand="lg" bg="dark" variant="dark" style={{ padding: '0.7rem 0', maxWidth: '100vw', margin: '0 auto', overflowX: 'hidden' }}>
-        <Navbar expanded={expanded} expand="lg" style={navbarStyle} id="Nav">
-          <Container fluid style={{ maxWidth: '95vw', padding: '0' }}>
-            <Navbar.Brand href="/" style={brandStyle}>
-              <img src={Logotechnology} alt="Logo" style={{ height: '3.125rem', width:'auto',marginLeft:'1rem', marginRight:'-5rem'}} />
-            </Navbar.Brand>
-            {/* Config with Toggle */}
-            <Navbar.Toggle
-              aria-controls="basic-navbar-nav"
-              onClick={() => setExpanded(expanded ? false : "expanded")}
-              style={toggleIconStyle}
-            />
-            <Navbar.Collapse id="basic-navbar-nav" style={navbarCollapseStyle}>
-              <Nav className="me-auto">
-                <Nav.Link href="/" style={linkStyle}>{t('nav.home')}</Nav.Link>
-                {/* hide with url */}
-                {!HidePages && (
-                  <>
-                  <Nav.Link href="#IntroductionProfile" style={location.hash === '#IntroductionProfile' ? activeLinkStyle : linkStyle}>{t('nav.introductionMe')}</Nav.Link>
-                  <Nav.Link href="#AboutProfile" style={location.hash === '#AboutProfile' ? activeLinkStyle : linkStyle}>{t('nav.aboutMe')}</Nav.Link>
-                  <Nav.Link href="#SpotifyPlaying" style={location.hash === '#SpotifyPlaying' ? activeLinkStyle : linkStyle}>{t('nav.spotifyPlaying')}</Nav.Link>
-                  <Nav.Link href="#contactProfile" style={location.hash === '#contactProfile' ? activeLinkStyle : linkStyle}>{t('nav.contact')}</Nav.Link>
-                </>
-                )}
-                {/* {!Introduction && <Nav.Link href="#IntroductionProfile" style={linkStyle}>Introduction-Me</Nav.Link>}
-                {!isAboutmePage && <Nav.Link href="#AboutProfile" style={linkStyle}>About-Me</Nav.Link>}
-                {!SpotifyPlaying && <Nav.Link href="#SpotifyPlaying" style={linkStyle}>Spotify-Playing</Nav.Link>}
-                {!isContactPage && <Nav.Link href="#contactProfile" style={linkStyle}>Contact</Nav.Link>}  */}
-              </Nav>
-              <Nav>
-                <Nav.Link href="https://www.facebook.com/vu.nghia.18062">
-                  <img src={navIcon1} alt="Nav Icon" style={imageStyle} />
-                </Nav.Link>
-              </Nav>
-              <Nav style={{ alignItems: 'center' }}>
-                <LanguageSwitcher />
-                <Nav.Link onClick={toggleTheme} style={ToggleThemes}>
-                  <img src={theme === "light" ? icon_moon : icon_sun} alt="ToggleTheme" style={{ height: '1.5rem', width: 'auto', marginLeft: '0.5rem' }} />
-                </Nav.Link>
-              </Nav>
-            </Navbar.Collapse>
-          </Container>
-        </Navbar>
-      );
-    };
+        <button
+          className={`inline-flex items-center justify-center rounded-xl border p-2 transition sm:hidden ${navButtonClass}`}
+          onClick={() => setExpanded(!expanded)}
+          aria-label="Toggle navigation"
+        >
+          <span className="block h-0.5 w-6 bg-current" />
+          <span className="block h-0.5 w-6 bg-current mt-1" />
+          <span className="block h-0.5 w-6 bg-current mt-1" />
+        </button>
 
-    export default NavBar;
+        <nav className={`flex-1 items-center gap-2 sm:flex ${expanded ? 'block' : 'hidden'} sm:block`}>
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-center">
+            <a href="/" className={`rounded-full px-4 py-2 text-sm font-medium transition ${theme === 'dark' ? 'text-slate-100 hover:bg-slate-800' : 'text-black hover:bg-zinc-100'}`}>
+              {t('nav.home')}
+            </a>
+            {!hidePages && (
+              <>
+                <a href="#IntroductionProfile" className={navLinkClass(location.hash === '#IntroductionProfile')}>
+                  {t('nav.introductionMe')}
+                </a>
+                <a href="#AboutProfile" className={navLinkClass(location.hash === '#AboutProfile')}>
+                  {t('nav.aboutMe')}
+                </a>
+                <a href="#SpotifyPlaying" className={navLinkClass(location.hash === '#SpotifyPlaying')}>
+                  {t('nav.spotifyPlaying')}
+                </a>
+                <a href="#contactProfile" className={navLinkClass(location.hash === '#contactProfile')}>
+                  {t('nav.contact')}
+                </a>
+              </>
+            )}
+          </div>
+        </nav>
+
+        <div className="flex items-center gap-3">
+          <LanguageSwitcher />
+          <button onClick={toggleTheme} className={`rounded-2xl border p-2 transition ${navButtonClass}`}>
+            <img src={theme === 'light' ? icon_moon : icon_sun} alt="Toggle theme" className="h-5 w-auto" />
+          </button>
+          <a href="https://www.facebook.com/vu.nghia.18062" className={`${navSocialClass}`}>
+            <img src={navIcon1} alt="Facebook" className="h-6 w-auto" />
+          </a>
+        </div>
+      </div>
+    </header>
+  );
+};
+
+export default NavBar;

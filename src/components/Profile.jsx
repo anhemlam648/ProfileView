@@ -1,216 +1,176 @@
-  import { useState, useEffect } from "react";
-  import { Container, Row, Col } from "react-bootstrap";
-  import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-  import { faCode, faPalette, faUser } from '@fortawesome/free-solid-svg-icons';
-  import { faFacebook, faGithub, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-  import { useTranslation } from 'react-i18next';
-  import NavBar from "./NavBar";
-  import Footer from "./Footer";
-  import Copied from "../assets/img/Copied.png";
-  import "./Profile.css";
-  //import profileImage from "../assets/img/computer.jpg";
-  import Pixel from "../assets/img/Pixel.jpg";
-  import Image from "../assets/img/Image.jpg";
-  import SpotifyPlayer from '../components/SpotifyPlayer'; 
-  import { useNavigate } from "react-router-dom";
-  import { ThemContext } from "./context/ThemProvider";
-  import { useContext } from "react";
-  const Profile = () => {
+import { useState, useEffect, useContext } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCode, faPalette, faUser } from '@fortawesome/free-solid-svg-icons';
+import { useTranslation } from 'react-i18next';
+import NavBar from './NavBar';
+import Footer from './Footer';
+import Copied from '../assets/img/Copied.png';
+import Pixel from '../assets/img/Pixel.jpg';
+import Image from '../assets/img/Image.jpg';
+import SpotifyPlayer from './SpotifyPlayer';
+import { useNavigate } from 'react-router-dom';
+import { ThemContext } from './context/ThemProvider';
+
+const Profile = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
-  const handleClick = () => {
-          navigate('/contact');
-        };
-  const handleShowCV = () => {
-          navigate('/show');
-  };
-  const handlecopied = () => {
-    const yearEl = document.getElementById('yearold');
-    const descEl = document.getElementById('desciption');
-    const locationEl = document.getElementById('location');
-    if (!yearEl || !descEl || !locationEl) return;
-    const copyright = `${t('profile.copyYearLabel')}: ${yearEl.innerText}\n${t('profile.copyDescriptionLabel')}: ${descEl.innerText}\n${t('profile.copyLocationLabel')}: ${locationEl.innerText}`;
-    navigator.clipboard.writeText(copyright).then(() => {
-      alert(t('profile.copyRightAlert'));
-    }).catch(() => {});
-  };
+  const { theme } = useContext(ThemContext);
+
+  const textColor = theme === 'dark' ? 'text-white' : 'text-slate-950';
+  const mutedText = theme === 'dark' ? 'text-slate-300' : 'text-slate-600';
+  const secondaryText = theme === 'dark' ? 'text-slate-400' : 'text-slate-500';
+  const badgeStyle = theme === 'dark' ? 'border-slate-700 bg-slate-800 text-white' : 'border-zinc-100 bg-zinc-50 text-slate-700';
+  const cardStyle = theme === 'dark' ? 'border-slate-800 bg-slate-900 text-white shadow-black/20' : 'border-slate-200 bg-white shadow-slate-300/20 text-slate-950';
+  const infoPanelStyle = theme === 'dark' ? 'bg-slate-950 text-white shadow-slate-900/40' : 'bg-slate-50 text-slate-700 shadow-slate-200/40';
+  const heroOverlay = theme === 'dark' ? 'bg-gradient-to-br from-slate-800/60 to-slate-950/80' : 'bg-gradient-to-br from-slate-100/80 to-white/80';
 
   const [imageVariant, setImageVariant] = useState(1);
-  const [dynamicImage, setDynamicImage] = useState(Image);
-    useEffect(() => {
-        const timer = setInterval(() => {
-          setImageVariant((v) => (v === 1 ? 2 : 1));
-          setDynamicImage((img) => (img === Image ? Pixel : Image));
-        }, 6000);
-        return () => clearInterval(timer);
-      }, []);
-      useEffect(() => {
-        const profileElement = document.getElementById('IntroductionProfile');
-    
-        if (!profileElement) return;
-        const snowfallDiv = document.createElement('div');
-        snowfallDiv.className = 'snowfall';
-        profileElement.appendChild(snowfallDiv);
-        for (let i = 0; i < 80; i++) {
-          const snowflake = document.createElement('div');
-          snowflake.className = 'snowflake';
-          snowflake.style.left = `${Math.random() * 100}%`;
-          snowflake.style.right = `${Math.random() * 100}%`;
-          snowflake.style.animationDuration = `${Math.random() * 10 + 5}s`;
-          snowflake.style.opacity = `${Math.random() * 1 + 1}`;
-          snowfallDiv.appendChild(snowflake);
-        }
-        return () => {
-          if (snowfallDiv.parentNode) snowfallDiv.parentNode.removeChild(snowfallDiv);
-        };
-      }, []);
-      // const [darkMode, setDarkMode] = useState(false);
-      // const handleToggleDarkMode = () => {
-      //   setDarkMode(!darkMode);
-      // };
-    const { theme } = useContext(ThemContext);
-    return (
-    // <div className={darkMode ? "dark-mode" : "light-mode"}>
+  const [heroImage, setHeroImage] = useState(Image);
 
-      // <div id="IntroductionProfile" className="profile">
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setImageVariant((value) => (value === 1 ? 2 : 1));
+      setHeroImage((current) => (current === Image ? Pixel : Image));
+    }, 6000);
 
-     <div id="IntroductionProfile" className={`profile ${theme}`}>
-        <NavBar/>
-        {/* <Button id="themesbutton" variant={darkMode ? "dark" : "light"} onClick={handleToggleDarkMode} style={{ marginLeft: '1rem' }}>
-           <i className={`fas ${darkMode ? "fa-moon" : "fa-sun"}`}></i> {darkMode ? "Dark Mode" : "Light Mode"}
-         </Button> */}
-        <Container className="profile-content">
-          <Row>
-            <Col className="profile-intro">
-            <img className="profile-image"
-                 //src={profileImage}
-                  src={dynamicImage}
-                  alt="Profile Image"
-                  />
-              {/* <h1 className="typing-container"><span className="typing-text1" /></h1>
-              <h1 className="typing-container1"><span className="typing-text2" /></h1> */}
-              <h1 id="typingtext1">{t('profile.typing-text1')}</h1>
-              <h1 id="typingtext2">{t('profile.typing-text2')}</h1>
-              <p id="yearold">{t('profile.yearsOld')}</p>
-              <p id="desciption">{t(`profile.description${imageVariant}`)}</p>
-              <p id="location">{t(`profile.location${imageVariant}`)}</p>
-              <p className="buttonIconCopied" onClick={handlecopied} style={{ width: '3%', margin: 'auto' }} role="button" tabIndex={0} onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && (e.preventDefault(), handlecopied())}>
-                <img src={Copied} alt="Copy" />
-              </p>
-              <div className="skill-icons">
-                <div className="skill-icon">
-                  <FontAwesomeIcon icon={faCode} size="3x" />
-                  <p>{t('profile.webDeveloper')}</p>
-                </div>
-                <div className="skill-icon">
-                  <FontAwesomeIcon icon={faPalette} size="3x" />
-                  <p>{t('profile.uiDesigner')}</p>
-                </div>
-                <div className="skill-icon">
-                  <FontAwesomeIcon icon={faUser} size="3x" />
-                  <p>{t('profile.uxDesigner')}</p>
-                </div>
-              </div>
-            </Col>
-            <div className="button-cv">
-                  <button onClick={handleShowCV}>{t('profile.exploreMyCv')}</button>
-            </div>
-              <div className="social-icons">
-                <a href="https://www.facebook.com/vu.nghia.18062" aria-label="Facebook">
-                  <FontAwesomeIcon icon={faFacebook} />
-                </a>
-                <a href="https://github.com/anhemlam648" aria-label="GitHub">
-                  <FontAwesomeIcon icon={faGithub} />
-                </a>
-                <a href="https://www.linkedin.com/in/vũ-nghĩa-9277bb350/" aria-label="Linkedin">
-                  <FontAwesomeIcon icon={faLinkedin} />
-                </a>
-                <a href="#" aria-label="Instagram">
-                  <FontAwesomeIcon icon={faInstagram} />
-                </a>
-            </div>
-          </Row>
-        </Container>
-        <div id='SpotifyPlaying' className="content-section">
-          <Container>
-            <Row>
-              <Col className="content">
-                <p style={{marginTop:'-20px'}}>{t('profile.hobbies')}</p>
-                <SpotifyPlayer /> 
-              </Col>
-            </Row>
-            <hr />
-          </Container>
-        </div>
-        <div className="content-service">
-          <Container>
-              <Row>
-              <Col className="content">
-                  <p style={{ fontSize: '50px', textAlign: "center" ,color:'#33FFFF' }}>{t('profile.quote')}</p>
-                  <p style={{ fontSize: '30px', textAlign: "center" }}>{t('profile.quoteAuthor')}</p>
-              </Col>
-              </Row>
-          </Container>
-          </div>
-          <div style={{ textAlign: 'center', fontSize: '50px', color: '#FFCCFF' }}>&#9660;</div>
-          <div id="AboutProfile" className="about-me">
-          <Container>
-              <Row>
-              <Col className="content-about">
-                  <p style={{ fontSize: '50px', textAlign: "center", color:'#FFFF00' }}>{t('profile.aboutMe')}</p>
-                  <p style={{ fontSize: '30px', textAlign: "center" }}>{t('profile.welcome')}</p>
-              </Col>
-              </Row>
-              <Row>
-            <Col md={6} lg={3}>
-              <div className="square-box">
-                <div>
-                  <p className="education" style={{ fontSize: '40px' }}>{t('profile.education')}</p>
-                  <p>{t('profile.educationDesc')}</p>
-                </div>
-              </div>
-            </Col>
-            <Col md={6} lg={3}>
-              <div className="square-box">
-                <div>
-                  <p className="figma" style={{ fontSize: '40px' }}>{t('profile.figma')}</p>
-                  <p>{t('profile.figmaDesc')}</p>
-                </div>
-              </div>
-            </Col>
-            <Col md={6} lg={3}>
-              <div className="square-box">
-                <div>
-                  <p className="network" style={{ fontSize: '40px' }}>{t('profile.networking')}</p>
-                  <p>{t('profile.networkingDesc')}</p>
-                </div>
-              </div>
-            </Col>
-            <Col md={6} lg={3}>
-              <div className="square-box">
-                <div>
-                  <p className="music" style={{ fontSize: '40px' }}>{t('profile.musicGames')}</p>
-                  <p>{t('profile.musicGamesDesc')}</p>
-                </div>
-              </div>
-            </Col>
-          </Row>
-          <hr />
-          </Container>
-          <div id="contactProfile" className="content-contact" >
-          <Container>
-              <Row>
-              <Col className="content">
-                  <p style={{ fontSize: '50px', textAlign: "center" ,color:'#66FFCC' }}>{t('profile.workTogether')}</p>
-                    <button className="button" onClick={handleClick}>{t('profile.contactMe')}</button>
-              </Col>
-              </Row>
-          </Container>
-          </div>
-            </div>
-            <hr/>
-        <Footer />
-      </div>
-    );
+    return () => clearInterval(timer);
+  }, []);
+
+  const handleNavigate = (path) => {
+    navigate(path);
   };
-  export default Profile;
+
+  const handleCopied = () => {
+    const yearEl = document.getElementById('yearold');
+    const descEl = document.getElementById('description');
+    const locationEl = document.getElementById('location');
+
+    if (!yearEl || !descEl || !locationEl) return;
+
+    const payload = `${t('profile.copyYearLabel')}: ${yearEl.innerText}\n${t('profile.copyDescriptionLabel')}: ${descEl.innerText}\n${t('profile.copyLocationLabel')}: ${locationEl.innerText}`;
+    navigator.clipboard.writeText(payload).then(() => {
+      alert(t('profile.copyRightAlert'));
+    });
+  };
+
+  const stats = [
+    { label: t('profile.webDeveloper'), value: '5+' },
+    { label: t('profile.uiDesigner'), value: '4+' },
+    { label: t('profile.uxDesigner'), value: '3+' },
+  ];
+
+  return (
+    <div className={`min-h-screen transition-colors duration-500 ${theme === 'dark' ? 'bg-black text-white' : 'bg-white text-slate-900'}`}>
+      <NavBar />
+      <main id="IntroductionProfile" className="relative overflow-hidden pt-28">
+        <section className="mx-auto flex max-w-6xl flex-col gap-12 px-4 py-12 sm:px-6 lg:px-8">
+          <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] items-center">
+            <div className="space-y-6">
+              <div className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-semibold ${badgeStyle}`}>
+                <span className={`h-2 w-2 rounded-full ${theme === 'dark' ? 'bg-slate-500' : 'bg-zinc-500'}`} />
+                {t('profile.webDeveloper')}
+              </div>
+              <div className="space-y-4">
+                <h1 className={`max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl ${textColor}`}>
+                  {t('profile.typing-text1')}
+                  <span className={`block sm:inline sm:ml-3 ${mutedText}`}>{t('profile.typing-text2')}</span>
+                </h1>
+                <p id="description" className={`max-w-3xl text-base leading-8 sm:text-lg ${mutedText}`}>
+                  {t(`profile.description${imageVariant}`)}
+                </p>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-4">
+                <button
+                  type="button"
+                  onClick={() => handleNavigate('/show')}
+                  className="rounded-full bg-zinc-900 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-zinc-500/20 transition hover:-translate-y-0.5 hover:bg-zinc-800"
+                >
+                  {t('profile.exploreMyCv')}
+                </button>
+                <button
+                  type="button"
+                  onClick={() => handleNavigate('/contact')}
+                  className={`rounded-full border px-6 py-3 text-sm font-semibold transition ${theme === 'dark' ? 'border-slate-700 bg-slate-800 text-white hover:bg-slate-700' : 'border-zinc-100 bg-white text-slate-900 hover:bg-zinc-50'}`}
+                >
+                  {t('profile.contactMe')}
+                </button>
+                <button
+                  type="button"
+                  onClick={handleCopied}
+                  className={`inline-flex h-12 w-12 items-center justify-center rounded-full p-2 shadow-lg transition ${theme === 'dark' ? 'bg-slate-800 text-white shadow-black/20 hover:bg-slate-700' : 'bg-slate-100 text-slate-900 shadow-slate-300/20 hover:bg-slate-200'}`}
+                  aria-label="Copy profile text"
+                >
+                  <img src={Copied} alt="Copy" className="h-6 w-6" />
+                </button>
+              </div>
+
+              <div className="grid gap-4 sm:grid-cols-3">
+                {stats.map((stat) => (
+                  <div key={stat.label} className={`rounded-[1.5rem] border p-6 shadow-xl backdrop-blur-sm ${cardStyle}`}>
+                    <p className={`text-3xl font-semibold ${textColor}`}>{stat.value}</p>
+                    <p className={`mt-2 text-sm uppercase tracking-[0.24em] ${secondaryText}`}>{stat.label}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="relative">
+              <div className={`absolute -inset-4 rounded-[2.5rem] ${heroOverlay}`} />
+              <div className={`relative overflow-hidden rounded-[2rem] border p-4 shadow-2xl ${cardStyle}`}>
+                <img src={heroImage} alt="Profile" className="h-full w-full rounded-[1.5rem] object-cover" />
+                <div className={`mt-5 rounded-3xl p-4 shadow-inner ${infoPanelStyle}`}>
+                  <p id="yearold" className={`text-sm uppercase tracking-[0.28em] ${secondaryText}`}>{t('profile.yearsOld')}</p>
+                  <p id="location" className={`mt-2 text-lg font-semibold ${textColor}`}>{t(`profile.location${imageVariant}`)}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="AboutProfile" className="grid gap-6 lg:grid-cols-3">
+            <div  className={`rounded-[2rem] border p-8 shadow-xl ${cardStyle}`}>
+              <h2 className={`text-xl font-semibold ${textColor}`}>{t('profile.aboutMe')}</h2>
+              <p className={`mt-4 leading-7 ${mutedText}`}>{t('profile.welcome')}</p>
+            </div>
+            <div className={`rounded-[2rem] border p-8 shadow-xl ${cardStyle}`}>
+              <h2 className={`text-xl font-semibold ${textColor}`}>{t('profile.workTogether')}</h2>
+              <p className={`mt-4 leading-7 ${mutedText}`}>{t('profile.quote')}</p>
+              <button
+                type="button"
+                onClick={() => handleNavigate('/contact')}
+                className="mt-6 rounded-full bg-zinc-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-zinc-800"
+              >
+                {t('profile.contactMe')}
+              </button>
+            </div>
+            <div className={`rounded-[2rem] border p-8 shadow-xl ${cardStyle}`}>
+              <h2 className={`text-xl font-semibold ${textColor}`}>{t('profile.hobbies')}</h2>
+              <p className={`mt-4 leading-7 ${mutedText}`}>{t('profile.quoteAuthor')}</p>
+            </div>
+          </div>
+
+          <div id="SpotifyPlaying" className={`rounded-[2rem] border p-8 shadow-xl ${cardStyle}`}>
+            <h2 className={`text-2xl font-semibold ${textColor}`}>{t('profile.hobbies')}</h2>
+            <div className={`mt-8 rounded-[1.75rem] p-6 ${theme === 'dark' ? 'bg-slate-950' : 'bg-slate-50'}`}>
+              <SpotifyPlayer />
+            </div>
+          </div>
+          <div id="contactProfile" className={`rounded-[2rem] border p-8 shadow-xl ${cardStyle}`}>
+            <h2 className={`text-2xl font-semibold ${textColor}`}>{t('profile.contactMe')}</h2>
+            <p className={`mt-4 leading-7 ${mutedText}`}>{t('profile.welcome')}</p>
+            <button
+              type="button"
+              onClick={() => handleNavigate('/contact')}
+              className="mt-6 rounded-full bg-zinc-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-zinc-800"
+            >
+              {t('profile.contactMe')}
+            </button>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </div>
+  );
+};
+
+export default Profile;

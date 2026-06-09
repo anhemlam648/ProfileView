@@ -1,138 +1,60 @@
 import { useContext, useState } from 'react';
-import { Container, Row, Col } from "react-bootstrap";
 import { useTranslation } from 'react-i18next';
 import { ThemContext } from './context/ThemProvider';
+
 const Footer = () => {
   const [isHovered, setIsHovered] = useState(false);
   const { t } = useTranslation();
   const { theme } = useContext(ThemContext);
-  //footer
-  const footerStyle = {
-    dark:{
-      background: '#333',
-      color: 'white',
-      padding: '1rem 0', 
-      marginTop: '-0.9rem', 
-      zIndex: 1,
-      borderBottom: '2px solid #ffeb3b' 
-    },
-    light:{
-      background: 'linear-gradient(to right, #ff5722, #ffd700)',
-      color: 'white',
-      padding: '1rem 0', 
-      marginTop: '-0.9rem', 
-      zIndex: 1,
-      borderBottom: '2px solid #ffeb3b' 
-    }
-  };
 
-  //heading
-  const headingStyle = {
-    color: 'white',
-    fontSize: '1.25rem', 
-    textAlign: 'center', 
-  };
-  
-  //heading1
-  const headingStyle1 = {
-    color: 'white',
-    fontSize: '1rem', 
-    textAlign: 'center', 
-  };
-  
-  //link
-  const linkStyle = {
-    color: 'white',
-    textDecoration: 'none',
-    display: 'block', 
-    textAlign: 'center', 
-  };
-  
-  //paragraph
-  const paragraphStyle = {
-    marginBottom: '0.5rem', 
-    color: 'white',
-    fontSize: '0.875rem', 
-    textAlign: 'center', 
-  };
-
-  //maplocation
-  const mapLocation = {
-    marginTop: '1rem',
-    marginBottom: '1rem',
-    transform: isHovered ? 'scale(1.1)' : 'scale(1.05)',
-    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-  };
-  
   return (
-    // <footer style={footerStyle} >
-
-      <footer style={footerStyle[theme]} className= {`footer ${theme}`} >
-      <Container>
-        <Row>
-          <Col xs={12} md={6}>
-            <h5 style={headingStyle}>{t('footer.contactInfo')}</h5>
-            <p style={paragraphStyle}>{t('footer.address')}</p>
-            <p style={paragraphStyle}>{t('footer.email')}</p>
-            <div id="address" style={mapLocation} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-            <Container>
-              <Row>
-                <Col className="map-container">
-                  <iframe title="Google Map" width="100%" height="250" src="https://maps.google.com/maps?q=34/7%2C%20đường.%20Số%201A%2C%20P.%20Long%20Thạnh%20Mỹ%2C%20Q.%20Thủ%20Đức%2C%20TP.HCM&t=&z=15&ie=UTF8&iwloc=&output=embed" allowFullScreen
-                  ></iframe>
-                </Col>
-              </Row>
-            </Container>
+    <footer className={`border-t ${theme === 'dark' ? 'border-slate-800 bg-slate-950 text-slate-200' : 'border-zinc-100 bg-white text-slate-900'} py-12`}>
+      <div className="mx-auto flex max-w-7xl flex-col gap-10 px-4 sm:px-6 lg:px-8">
+        <div className="grid gap-8 lg:grid-cols-2">
+          <div className="space-y-4">
+            <h5 className="text-xl font-semibold">{t('footer.contactInfo')}</h5>
+            <p className="text-sm leading-7">{t('footer.address')}</p>
+            <p className="text-sm leading-7">{t('footer.email')}</p>
           </div>
-          </Col>
-          <Col xs={12} md={6}>
-            <h6 style={headingStyle1}>{t('footer.usefulLinks')}</h6>
-            <ul style={{ listStyle: 'none', padding: '0' }}>
-              <li style={{ marginBottom: '0.5rem' }}>
-                <a
-                  href="https://www.facebook.com/vu.nghia.18062"
-                  style={linkStyle}
-                  onMouseOver={(e) => e.target.style.textDecoration = 'underline'}
-                  onMouseOut={(e) => e.target.style.textDecoration = 'none'}>
-                  FaceBook
-                </a>
-              </li>
-              <li style={{ marginBottom: '0.5rem' }}>
-                <a
-                  href="https://github.com/anhemlam648"
-                  style={linkStyle}
-                  onMouseOver={(e) => e.target.style.textDecoration = 'underline'}
-                  onMouseOut={(e) => e.target.style.textDecoration = 'none'}>
-                  GitHub
-                </a>
-              </li>
-              <li style={{ marginBottom: '0.5rem' }}>
-                <a
-                  href="https://www.linkedin.com/in/vũ-nghĩa-9277bb350/"
-                  style={linkStyle}
-                  onMouseOver={(e) => e.target.style.textDecoration = 'underline'}
-                  onMouseOut={(e) => e.target.style.textDecoration = 'none'}>
-                  LinkedIn
-                </a>
-              </li>
-              <li style={{ marginBottom: '0.5rem' }}>
-                <a
-                  href="#contact"
-                  style={linkStyle}
-                  onMouseOver={(e) => e.target.style.textDecoration = 'underline'}
-                  onMouseOut={(e) => e.target.style.textDecoration = 'none'}>
-                  Instagram
-                </a>
-              </li>
+          <div className="space-y-4">
+            <h6 className="text-lg font-semibold">{t('footer.usefulLinks')}</h6>
+            <ul className="space-y-2 text-sm text-current">
+              {[
+                { label: 'Facebook', href: 'https://www.facebook.com/vu.nghia.18062' },
+                { label: 'GitHub', href: 'https://github.com/anhemlam648' },
+                { label: 'LinkedIn', href: 'https://www.linkedin.com/in/vũ-nghĩa-9277bb350/' },
+                { label: 'Instagram', href: '#contact' },
+              ].map((link) => (
+                <li key={link.label}>
+                  <a href={link.href} className="transition hover:text-slate-900">
+                    {link.label}
+                  </a>
+                </li>
+              ))}
             </ul>
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <p style={paragraphStyle}>{t('footer.copyright')}</p>
-          </Col>
-        </Row>
-      </Container>
+          </div>
+        </div>
+
+        <div className="rounded-[2rem] border border-zinc-100 bg-white p-6 shadow-2xl shadow-zinc-200/40 transition-transform duration-300 hover:-translate-y-1">
+          <div
+            className="overflow-hidden rounded-[1.5rem] transition-transform duration-300"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            style={{ transform: isHovered ? 'scale(1.03)' : 'scale(1.0)' }}
+          >
+            <iframe
+              title="Google Map"
+              width="100%"
+              height="260"
+              src="https://maps.google.com/maps?q=34/7%2C%20đường.%20Số%201A%2C%20P.%20Long%20Thạnh%20Mỹ%2C%20Q.%20Thủ%20Đức%2C%20TP.HCM&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              className="h-[260px] w-full border-0"
+              allowFullScreen
+            />
+          </div>
+        </div>
+
+        <p className="text-center text-sm text-current/80">{t('footer.copyright')}</p>
+      </div>
     </footer>
   );
 };
