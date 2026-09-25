@@ -9,7 +9,6 @@ const Contact = () => {
   const { theme } = useContext(ThemContext);
 
   const headingColor = theme === 'dark' ? 'text-white' : 'text-slate-950';
-  const bodyText = theme === 'dark' ? 'text-slate-300' : 'text-slate-600';
   const detailsText = theme === 'dark' ? 'text-slate-200' : 'text-slate-800';
   const cardStyle = theme === 'dark' ? 'border-slate-800 bg-slate-900 text-white shadow-black/20' : 'border-slate-200 bg-white text-slate-950 shadow-slate-300/20';
   const mutedPanel = theme === 'dark' ? 'border-slate-800 bg-slate-950' : 'border-slate-200 bg-slate-50';
