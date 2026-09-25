@@ -49,7 +49,7 @@ const Footer = () => {
             <div className="footer-node footer-node-three"><b>UX</b><span /></div>
             <div className="footer-terminal">
               <div className="footer-terminal-bar"><span /><span /><span /><em>workspace.config</em></div>
-              <div className="footer-terminal-code"><p><b>01</b> const product = <strong>'thoughtful'</strong>;</p><p><b>02</b> product.<strong>build</strong>({`{`}</p><p><b>03</b>&nbsp;&nbsp; interface: <strong>'clear'</strong>,</p><p><b>04</b>&nbsp;&nbsp; performance: <strong>'fast'</strong>,</p><p><b>05</b> {`}`});</p></div>
+              <div className="footer-terminal-code"><p><b>01</b> const product = <strong>&apos;thoughtful&apos;</strong>;</p><p><b>02</b> product.<strong>build</strong>({`{`}</p><p><b>03</b>&nbsp;&nbsp; interface: <strong>&apos;clear&apos;</strong>,</p><p><b>04</b>&nbsp;&nbsp; performance: <strong>&apos;fast&apos;</strong>,</p><p><b>05</b> {`}`});</p></div>
             </div>
             <div className="footer-stack-pill">{t('footer.workspaceStack')}</div>
           </div>
